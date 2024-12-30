@@ -53,8 +53,8 @@ if (!function_exists('get_field')) {
 
   <header class="site-header fire-container my-4">
 
-    <a class="block w-8" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-      <?php new Fire_SVG('logo'); ?>
+    <a class="block w-[200px] lg:w-[400px]" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+      <?php echo ResponsivePics::get_picture(7, 'sm:200, lg:400', '', false, false); ?>
       <span class="sr-only"><?php bloginfo( 'name' ); ?></span>
     </a>
 

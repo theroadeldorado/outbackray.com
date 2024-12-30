@@ -221,3 +221,32 @@ function fire_print_scripts_at_location($scripts, $location)
     print $script['script'];
   }
 }
+
+// Remove delete button for logo.png in media library
+add_action('admin_footer', function() {
+  ?>
+  <script>
+    jQuery(document).ready(function($) {
+      // Check if we're in the media library
+      if (wp.media) {
+        wp.media.view.Attachment.Details.TwoColumn = wp.media.view.Attachment.Details.TwoColumn.extend({
+          render: function() {
+            // Call the parent render method
+            wp.media.view.Attachment.Details.prototype.render.apply(this, arguments);
+
+            // Get the filename
+            var filename = this.model.get('filename');
+
+            // If this is logo.png, remove the delete button
+            if (filename === 'logo.png') {
+              this.$el.find('.delete-attachment').remove();
+            }
+
+            return this;
+          }
+        });
+      }
+    });
+  </script>
+  <?php
+});
