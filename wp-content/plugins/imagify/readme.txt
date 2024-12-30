@@ -1,23 +1,23 @@
 === Imagify – Optimize Images & Convert WebP & AVIF | Compress Images Easily ===
 Contributors: wp_rocket, imagify
 Tags: optimize images, image optimization, compress images, convert webp, convert AVIF
-Tested up to: 6.5
-Stable tag: 2.2.2
+Tested up to: 6.7
+Stable tag: 2.2.4
 Requires PHP: 7.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Compress images & convert WebP and Avif with the best and easiest WordPress image optimization plugin. Resize and optimize images in 1-click easily!
+Compress images & convert WebP and AVIF with the best and easiest WordPress image optimization plugin. Resize and optimize images in 1-click easily!
 
 == Description ==
 
 = The Best Image Optimization Plugin For WordPress =
 
-[Imagify](https://imagify.io/) is the most advanced image optimization plugin to help you resize and compress images. You can now use its power directly in WordPress to optimize images and reduce the weight of the photos you want to add to your site – image optimization is all done with just one click and without sacrificing their quality. 
+[Imagify](https://imagify.io/) is the most advanced image optimization plugin to help you resize and compress images. You can now use its power directly in WordPress to optimize images and reduce the weight of the photos you want to add to your site – image optimization is all done with just one click and without sacrificing their quality.
 
 Imagify is the best WordPress image optimizer. The plugin lets you optimize images in one go with its asynchronous bulk optimization option. You can resize your images on the fly – they will be automatically optimized at the best compression level. If needed, you can always restore your images to their original versions.
 
-On top of optimizing images, you’ll choose the best WebP plugin and AVIF plugin for WordPress. Imagify also converts your images to WebP and AVIF, the next-gen formats for lighter images that will speed up your WordPress site, improve user experience, and even SEO. Convert WebP and convert AVIF will make a difference in image optimization, you’ll see that from yourself.
+On top of optimizing images, you’ll choose the best AVIF and WebP converter plugin for WordPress. Imagify also converts your images to WebP and AVIF, the next-gen formats for lighter images that will speed up your WordPress site, improve user experience, and even SEO. Convert WebP and convert AVIF will make a difference in image optimization, you’ll see that from yourself.
 
 Lastly, it’s easy to use the best image compression plugin for better site performance. Speed up your WordPress site and improve Core Web Vitals thanks to Imagify’s state-of-the-art image optimization process.
 
@@ -38,15 +38,15 @@ When using our image compression tool, Imagify, you will enjoy smaller file size
 
 = Convert Images to the WebP and AVIF Formats  =
 
-Thanks to Imagify, you can take a step further in your image optimization process. You can also convert all your images to next-gen image formats such as WebP and AVIF. WebP format, as well as the AVIF format, offers superior image compression and quality and is a way to optimise images and speed up their loading times on websites. To convert images to next-gen format, using the Imagify plugin will save you a precious amount of time. 
+Thanks to Imagify, you can take a step further in your image optimization process. You can also convert all your images to next-gen image formats such as WebP and AVIF. WebP format, as well as the AVIF format, offers superior image compression and quality and is a way to optimise images and speed up their loading times on websites. By utilizing Imagify’s AVIF and WebP optimizer, you can efficiently convert images to these next-gen formats, saving you a precious amount of time.
 
-With Imagify, WebP compression and conversion are indeed super easy. Wondering how the convert WebP option works? Imagify will automatically enable WebP and convert your images to WebP. You can also easily convert WebP images to AVIF.
+With Imagify, WebP conversion and compression are indeed super easy. Wondering how the convert WebP option works? Imagify will automatically enable WebP and convert your images to WebP. You can also easily convert WebP images to AVIF.
 
 If the "Create Next-gen formats versions" option is enabled, the AVIF version of optimized images will be created automatically. Simple as that! Thanks to the best WebP and AVIF plugin for WordPress, you’ll be able to take advantage of the automatic convert WebP feature in no time, plus you’ll always have the convert AVIF option.
 
 Imagify can also display the AVIF images directly on your front-end. But because some browser versions don’t support AVIF yet, Imagify lets you have both optimized versions of the original format images and the WebP versions ready. Imagify will serve the AVIF version if a visitor's browser supports it and the WebP format if not (if you have previously converted the images to WebP).
 
-WebP is definitively an excellent replacement for jpeg, png, and gif images, and the same goes for AVIF, which improves your image performance even further. Imagify offers WebP conversion for all image formats: you can convert gif to webP, jpeg to WebP, and even png to WebP. You can also benefit from AVIF conversion and convert gif to AVIF, jpg and jpeg to AVIF, ng to AVIF, and even WebP to AVIF!
+WebP is definitively an excellent replacement for jpeg, png, and gif images, and the same goes for AVIF, which improves your image performance even further. Imagify offers WebP conversion for all image formats: you can convert gif to WebP, jpeg to WebP, and even png to WebP. You can also benefit from AVIF conversion and convert gif to AVIF, jpg and jpeg to AVIF, png to AVIF, and even WebP to AVIF!
 Whatever your favorite image format, let Imagify optimise your images!
 
 = Optimise Images to Make Your Site Faster and Improve Core Web Vitals  =
@@ -169,7 +169,7 @@ Yes, Imagify is fully compatible with NextGEN Gallery, the most popular photo ga
 
 Imagify can optimize JPG, PNG, WebP, PDF files and GIFs (whether animated or not).
 
-When you optimize JPG, PNG, and GIF files, Imagify will also create WebP versions of your original images and all your thumbnail sizes (if you have this option enabled).
+When you optimize JPG, PNG, and GIF files, Imagify will also create WebP and AVIF versions of your original images and all your thumbnail sizes (if you have this option enabled).
 
 = How should I know which image compression level is best for me? =
 
@@ -178,6 +178,10 @@ Don’t worry! Imagify comes with the Smart Compression Mode. It means that your
 =How does the image optimization process work?=
 
 The image optimization process is performed on our servers. Once done, Imagify returns the optimized image to your server. We do not edit images’ titles or any other information, so there is nothing further to be done on your end than to compress images. Your original images will be moved to a dedicated backup folder (just make sure to keep the Backup option active in Imagify settings).
+
+=How to enable the Webp Converter?=
+
+With Imagify v2.2, the creation of WebP images is enabled by default. This means that when Imagify optimizes your images using its built-in WebP optimizer, a WebP version will automatically be generated, provided you have disabled the “Create AVIF versions of images” option in your plugin settings. Although the WebP files won’t be directly visible in your Media Library, you can verify their creation by checking for the “Next-Gen generated: yes” indication in the Imagify column of your Media Library.
 
 =How long are images stored by Imagify?=
 
@@ -262,6 +266,25 @@ You can report any security bugs found in the source code of the site-reviews pl
 4. Other Media Page
 
 == Changelog ==
+= 2.2.4 =
+- Enhancement: Deactivate by default calculation of the media elements used for the filters in the Media Library view.
+- Enhancement: Remove unnecessary calls to the API on each page load.
+- Enhancement: Update the UI of the banners, remove the unnecessary step before the checkout.
+- 3rd-party compatibility: Fix a problem when an unstyled banner was displayed on Gravity Forms plugin view.
+
+= 2.2.3.2 =
+- Enhancement: Optimize and cache the modal attachment counter database query.
+
+= 2.2.3.1 =
+- Enhancement: Decrease the amount of requests to imagify servers.
+
+= 2.2.3 =
+- Enhancement: Cache the calls to the license API to avoid sending unnecessary requests
+- 3rd-party compatibility: Update priority on `template_redirect` to improve compatibility with WP Rocket’s LazyLoad
+- Bugfix: Fix `Uncaught TypeError: strpos() expects parameter 1 to be string` fatal error
+- Enhancement: UI improvements
+- Enhancement: Improve the code architecture
+
 = 2.2.2 =
 - Enhancement: Allow to choose which Next-Gen images should be generated in UI
 - Enhancement: Guard against image size that’s not a string

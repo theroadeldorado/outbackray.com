@@ -3,10 +3,12 @@ declare(strict_types=1);
 
 namespace Imagify\Optimization\Process;
 
+use Imagify_Filesystem;
 use Imagify\Deprecated\Traits\Optimization\Process\AbstractProcessDeprecatedTrait;
 use Imagify\Job\MediaOptimization;
 use Imagify\Optimization\Data\DataInterface;
 use Imagify\Optimization\File;
+use Imagify\Media\MediaInterface;
 use WP_Error;
 
 /**
@@ -16,22 +18,6 @@ use WP_Error;
  */
 abstract class AbstractProcess implements ProcessInterface {
 	use AbstractProcessDeprecatedTrait;
-
-	/**
-	 * The suffix used in the thumbnail size name.
-	 *
-	 * @var string
-	 * @since 1.9
-	 */
-	const WEBP_SUFFIX = '@imagify-webp';
-
-	/**
-	 * The suffix used in the thumbnail size name.
-	 *
-	 * @var string
-	 * @since 2.2
-	 */
-	const AVIF_SUFFIX = '@imagify-avif';
 
 	/**
 	 * The suffix used in file name to create a temporary copy of the full size.
@@ -1638,7 +1624,7 @@ abstract class AbstractProcess implements ProcessInterface {
 
 		$keys = array_keys( $sizes );
 		$non_next_gen_keys = array_values(array_filter($keys, function ( $key ) {
-			return strpos( $key, $this->format ) === false;
+			return strpos( (string) $key, $this->format ) === false;
 		}));
 
 		return array_reduce($non_next_gen_keys, function ( $is_fully, $key ) use ( $sizes ) {

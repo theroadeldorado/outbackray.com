@@ -1,8 +1,8 @@
 /* libs */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
 /* base */
 @import 'tailwindcss/base';
-@import './assets/styles/base/fonts';
 @import './assets/styles/base/scaffolding';
 @import './assets/styles/base/typography';
 @import './assets/styles/base/fire-container';

@@ -1,7 +1,9 @@
 <?php
 defined( 'ABSPATH' ) || die( 'Cheatin’ uh?' );
-?>
 
+$pos = strpos( $data['plan_label'], '_' );
+$plan_label = false !== $pos ? substr( $data['plan_label'], 0, $pos ) : $data['plan_label'];
+?>
 <div class="imagify-admin-bar-quota">
 	<div class="imagify-abq-row">
 		<?php if ( $data['plan_with_quota'] ) : ?>
@@ -9,7 +11,7 @@ defined( 'ABSPATH' ) || die( 'Cheatin’ uh?' );
 		<?php endif; ?>
 		<div class="imagify-account">
 			<p class="imagify-meteo-title"><?php esc_html_e( 'Account status', 'imagify' ); ?></p>
-			<p class="imagify-meteo-subs"><?php esc_html_e( 'Your subscription:', 'imagify' ); ?> &nbsp;<strong class="imagify-user-plan"><?php echo $data['plan_label']; ?></strong></p>
+			<p class="imagify-meteo-subs"><?php esc_html_e( 'Your subscription:', 'imagify' ); ?> &nbsp;<strong class="imagify-user-plan"><?php echo $plan_label; ?></strong></p>
 		</div>
 	</div>
 	<?php if ( $data['plan_with_quota'] ) : ?>
@@ -35,7 +37,7 @@ defined( 'ABSPATH' ) || die( 'Cheatin’ uh?' );
 		<?php endif; ?>
 		<p><?php echo $data['text']; ?></p>
 		<p class="center txt-center text-center"><a class="imagify-upsell-admin-bar-button" href="<?php echo esc_url( $data['upgrade_link'] ); ?>" target="_blank"><?php echo $data['button_text']; ?></a></p>
-		<a href="<?php echo esc_url( get_imagify_admin_url( 'dismiss-notice', 'upsell-admin-bar' ) ); ?>" class="imagify-notice-dismiss imagify-upsell-dismiss" title="<?php esc_attr_e( 'Dismiss this notice', 'imagify' ); ?>"><span class="screen-reader-text"><?php esc_html_e( 'Dismiss this notice', 'imagify' ); ?></span></a>
+		<a href="<?php echo esc_url( get_imagify_admin_url( 'dismiss-notice', 'upsell-admin-bar' ) ); ?>" class="imagify-notice-dismiss imagify-upsell-dismiss notice-dismiss" title="<?php esc_attr_e( 'Dismiss this notice', 'imagify' ); ?>"><span class="screen-reader-text"><?php esc_html_e( 'Dismiss this notice', 'imagify' ); ?></span></a>
 	</div>
 	<?php endif; ?>
 </div>

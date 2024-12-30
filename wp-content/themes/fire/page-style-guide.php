@@ -12,44 +12,16 @@
     <div class="container mx-auto mt-10 mb-20">
       <div>
         <div class="flex">
-          <div class="flex items-center justify-center w-32 h-20 mb-4 mr-4 text-black bg-primary-100">primary-100</div>
-          <div class="flex items-center justify-center w-32 h-20 mb-4 mr-4 text-black bg-primary-200">primary-200</div>
-          <div class="flex items-center justify-center w-32 h-20 mb-4 mr-4 text-black bg-primary-300">primary-300</div>
-          <div class="flex items-center justify-center w-32 h-20 mb-4 mr-4 text-white bg-primary-500">primary-500</div>
-          <div class="flex items-center justify-center w-32 h-20 mb-4 mr-4 text-white bg-primary-600">primary-600</div>
-          <div class="flex items-center justify-center w-32 h-20 mb-4 mr-4 text-white bg-primary-700">primary-700</div>
-          <div class="flex items-center justify-center w-32 h-20 mb-4 mr-4 text-white bg-primary-800">primary-800</div>
-          <div class="flex items-center justify-center w-32 h-20 mb-4 mr-4 text-white bg-primary-900">primary-900</div>
-        </div>
-        <div class="flex">
-          <div class="flex items-center justify-center w-32 h-20 mb-4 mr-4 text-black bg-secondary-100">secondary-100</div>
-          <div class="flex items-center justify-center w-32 h-20 mb-4 mr-4 text-black bg-secondary-200">secondary-200</div>
-          <div class="flex items-center justify-center w-32 h-20 mb-4 mr-4 text-black bg-secondary-300">secondary-300</div>
-          <div class="flex items-center justify-center w-32 h-20 mb-4 mr-4 text-white bg-secondary-500">secondary-500</div>
-          <div class="flex items-center justify-center w-32 h-20 mb-4 mr-4 text-white bg-secondary-600">secondary-600</div>
-          <div class="flex items-center justify-center w-32 h-20 mb-4 mr-4 text-white bg-secondary-700">secondary-700</div>
-          <div class="flex items-center justify-center w-32 h-20 mb-4 mr-4 text-white bg-secondary-800">secondary-800</div>
-          <div class="flex items-center justify-center w-32 h-20 mb-4 mr-4 text-white bg-secondary-900">secondary-900</div>
-        </div>
-        <div class="flex">
-          <div class="flex items-center justify-center w-32 h-20 mb-4 mr-4 text-black bg-accent-100">accent-100</div>
-          <div class="flex items-center justify-center w-32 h-20 mb-4 mr-4 text-black bg-accent-200">accent-200</div>
-          <div class="flex items-center justify-center w-32 h-20 mb-4 mr-4 text-black bg-accent-300">accent-300</div>
-          <div class="flex items-center justify-center w-32 h-20 mb-4 mr-4 text-white bg-accent-500">accent-500</div>
-          <div class="flex items-center justify-center w-32 h-20 mb-4 mr-4 text-white bg-accent-600">accent-600</div>
-          <div class="flex items-center justify-center w-32 h-20 mb-4 mr-4 text-white bg-accent-700">accent-700</div>
-          <div class="flex items-center justify-center w-32 h-20 mb-4 mr-4 text-white bg-accent-800">accent-800</div>
-          <div class="flex items-center justify-center w-32 h-20 mb-4 mr-4 text-white bg-accent-900">accent-900</div>
-        </div>
-        <div class="flex">
-          <div class="flex items-center justify-center w-32 h-20 mb-4 mr-4 text-black bg-gray-100">gray-100</div>
-          <div class="flex items-center justify-center w-32 h-20 mb-4 mr-4 text-black bg-gray-200">gray-200</div>
-          <div class="flex items-center justify-center w-32 h-20 mb-4 mr-4 text-black bg-gray-300">gray-300</div>
-          <div class="flex items-center justify-center w-32 h-20 mb-4 mr-4 text-white bg-gray-500">gray-500</div>
-          <div class="flex items-center justify-center w-32 h-20 mb-4 mr-4 text-white bg-gray-600">gray-600</div>
-          <div class="flex items-center justify-center w-32 h-20 mb-4 mr-4 text-white bg-gray-700">gray-700</div>
-          <div class="flex items-center justify-center w-32 h-20 mb-4 mr-4 text-white bg-gray-800">gray-800</div>
-          <div class="flex items-center justify-center w-32 h-20 mb-4 mr-4 text-white bg-gray-900">gray-900</div>
+          <div class="flex items-center justify-center w-32 h-20 mb-4 mr-4 text-black bg-green">green</div>
+          <div class="flex items-center justify-center w-32 h-20 mb-4 mr-4 text-black bg-light-green">light-green</div>
+          <div class="flex items-center justify-center w-32 h-20 mb-4 mr-4 text-black bg-orange">orange</div>
+          <div class="flex items-center justify-center w-32 h-20 mb-4 mr-4 text-black bg-light-orange">light-orange</div>
+          <div class="flex items-center justify-center w-32 h-20 mb-4 mr-4 text-black bg-tan">tan</div>
+          <div class="flex items-center justify-center w-32 h-20 mb-4 mr-4 text-black bg-light-tan">light-tan</div>
+          <div class="flex items-center justify-center w-32 h-20 mb-4 mr-4 text-black bg-navy">navy</div>
+          <div class="flex items-center justify-center w-32 h-20 mb-4 mr-4 text-black bg-light-navy">light-navy</div>
+          <div class="flex items-center justify-center w-32 h-20 mb-4 mr-4 text-black bg-purple">purple</div>
+          <div class="flex items-center justify-center w-32 h-20 mb-4 mr-4 text-black bg-light-purple">light-purple</div>
         </div>
       </div>
 
