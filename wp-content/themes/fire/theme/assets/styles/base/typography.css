@@ -38,6 +38,18 @@
     @apply text-[1.25rem]/[1.2] lg:text-[2rem]/[1.2];
   }
 
+  .base-lg {
+    @apply text-[1.5rem]/[1.4] lg:text-[2rem]/[1.4];
+  }
+
+  .base-normal {
+    @apply text-[1rem]/[1.4] lg:text-[1.5rem]/[1.4];
+  }
+
+  .base-sm {
+    @apply text-[0.875rem]/[1.4] lg:text-[1rem]/[1.4];
+  }
+
   .prose {
     @apply px-4;
   }

@@ -43,6 +43,10 @@
     }
 
     .full-width {
+      @apply col-[full-width];
+    }
+
+    .full-width-subgrid {
       @apply col-[full-width] grid grid-cols-subgrid;
 
       > *:not(.left, .right, .left-breakout, .right-breakout) {

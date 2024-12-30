@@ -238,7 +238,7 @@ add_action('admin_footer', function() {
             var filename = this.model.get('filename');
 
             // If this is logo.png, remove the delete button
-            if (filename === 'logo.png') {
+            if (filename === 'logo.png' || filename === 'ray.png') {
               this.$el.find('.delete-attachment').remove();
             }
 

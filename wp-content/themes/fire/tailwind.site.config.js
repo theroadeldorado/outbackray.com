@@ -16,21 +16,22 @@ module.exports = {
       sm: '576px',
       md: '768px',
       lg: '992px',
-      xl: '1200px',
+      xl: '1400px',
+      xxl: '1800px',
       // Update /inc/responsive-images.php to match above
     },
     container: {
-      gridCols: 12,
       gapX: {
-        DEFAULT: '0.75rem',
-        sm: '0.75rem',
-        lg: '1.5rem',
+        DEFAULT: '1.25rem',
+        sm: '1.25rem',
+        lg: '1.25rem',
       },
       center: true,
       padding: {
         DEFAULT: '1rem',
         sm: '1rem',
-        lg: '2rem',
+        lg: '3rem',
+        xl: '5rem',
       },
     },
     fontFamily: {
@@ -70,7 +71,6 @@ module.exports = {
     },
   },
   plugins: [
-    require('@tailwindcss/forms'),
     function ({ addBase, theme }) {
       const screens = theme('screens');
       let lastPadding = theme('container.padding.DEFAULT') || '0';

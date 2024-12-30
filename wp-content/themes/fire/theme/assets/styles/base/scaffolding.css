@@ -11,18 +11,22 @@
     @apply max-w-full;
   }
 
-  picture.lazyload-effect {
+  .lazyload-effect {
     img {
-      &.lazyload,
-      &.lazyloading {
-        opacity: 0;
-        transition: opacity 0.75s ease;
-      }
-
-      &.lazyloaded {
-        opacity: 1;
-      }
+      @apply transition-opacity duration-300 ease-in-out;
     }
+    .lazyload,
+    .lazyloading {
+      @apply opacity-0;
+    }
+
+    .lazyloaded {
+      @apply opacity-100 !important;
+    }
+  }
+
+  .full-image {
+    @apply object-cover object-center h-full w-full [&_img]:w-full [&_img]:h-full [&_img]:object-cover;
   }
 
   svg {
@@ -52,5 +56,9 @@
 
   .sr-only {
     @apply p-2 text-white bg-black;
+  }
+
+  body[x-cloak] {
+    overflow: hidden;
   }
 }
