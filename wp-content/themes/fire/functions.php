@@ -290,16 +290,16 @@ function get_text_color($bg_color) {
 function get_shadow_color($bg_color) {
   // Color pairs mapping
   $color_pairs = [
-    'bg-green' => '#A5D6A7',
-    'bg-light-green' => '#4CAF50',
-    'bg-orange' => '#FFC107',
-    'bg-light-orange' => '#FF9800',
-    'bg-tan' => '#ECE4DB',
-    'bg-light-tan' => '#ADA289',
-    'bg-navy' => '#697D91',
-    'bg-light-navy' => '#2C3E50',
-    'bg-purple' => '#D1C4E9',
-    'bg-light-purple' => '#8E44AD',
+    'bg-green' => '#1e511f',
+    'bg-light-green' => '#1e511f',
+    'bg-orange' => '#b06001',
+    'bg-light-orange' => '#b06001',
+    'bg-tan' => '#6d6856',
+    'bg-light-tan' => '#6d6856',
+    'bg-navy' => '#1d2935',
+    'bg-light-navy' => '#1d2935',
+    'bg-purple' => '#532764',
+    'bg-light-purple' => '#532764',
   ];
 
   return isset($color_pairs[$bg_color]) ? $color_pairs[$bg_color] : '';
@@ -309,7 +309,6 @@ function get_secondary_color($bg_color) {
   $color_pairs = [
     'bg-green' => '#4CAF50',
     'bg-orange' => '#FF9800',
-    'bg-tan' => '#ADA289',
     'bg-navy' => '#2C3E50',
     'bg-purple' => '#8E44AD',
   ];

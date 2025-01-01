@@ -31,9 +31,7 @@ $global_scripts = function_exists('get_field') ? get_field('scripts', 'site_sett
         ?>
       </div>
       <?php echo sprintf('© %s %s', date('Y'), get_bloginfo('name')); ?>
-      <div class="flex items-center justify-start space-x-2">
-        <?php require get_template_directory() . '/templates/components/social-links/social-links.php';?>
-      </div>
+
     </div>
   </footer>
 </div><!-- #page -->
@@ -44,8 +42,8 @@ $global_scripts = function_exists('get_field') ? get_field('scripts', 'site_sett
     require get_template_directory() . '/templates/components/grid-debug/grid-debug.php';
   }
 
-  wp_footer(); 
-  
+  wp_footer();
+
   fire_print_scripts_at_location($global_scripts, 'body-after');
 
   ?>

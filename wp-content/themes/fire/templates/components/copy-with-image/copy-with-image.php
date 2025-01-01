@@ -33,7 +33,7 @@
     $points[] = '0% 100%'; // Bottom left
 
   } else {
-    $points[] = 'calc(0% + (var(--fire-content-max-width) / 12 + var(--fire-content-gap-x)/2)) 0%'; // Top left
+    $points[] = 'calc(0% + (var(--fire-content-max-width) / 12 - var(--fire-content-gap-x)/2)) 0%'; // Top left
     // Random number of points between 5-7
     $num_points = rand(5, 7);
     $prev_y = 0;
@@ -44,7 +44,7 @@
       $prev_y = $y_pos;
       $points[] = "{$x_pos}% {$y_pos}%";
     }
-    $points[] = 'calc(0% + (var(--fire-content-max-width) / 12 + var(--fire-content-gap-x)/2)) 100%'; // Bottom left
+    $points[] = 'calc(0% + (var(--fire-content-max-width) / 12 - var(--fire-content-gap-x)/2)) 100%'; // Bottom left
     $points[] = '100% 100%'; // Bottom right
     $points[] = '100% 0%'; // Top right
   }
@@ -102,7 +102,7 @@
 
           <?php echo ResponsivePics::get_picture($image, 'sm:600 400|f, md:500 500|f, lg:600 600|f, xl:950 950|f, xxl:1200 1200|f', 'lazyload-effect full-image', false, false); ?>
         <?php else : ?>
-          <div class="relative my-0 md:my-20 lg:my-40 overflow-clip rounded-[30px] drop-shadow-[-12px_-11px_0px_var(--shadow-color)] lg:drop-shadow-[-24px_-23px_0px_var(--shadow-color)] rotate-[<?php echo $rotate_image; ?>deg]" style="--shadow-color: <?php echo $shadow_color; ?>;">
+          <div class="relative my-0 md:my-20 lg:my-40 overflow-clip rounded-[30px] drop-shadow-[-12px_-11px_0px_var(--shadow-color)] lg:drop-shadow-[-24px_-23px_0px_var(--shadow-color)]" style="--shadow-color: <?php echo $shadow_color; ?>; transform: rotate(<?php echo $rotate_image; ?>deg);">
             <?php echo ResponsivePics::get_picture($image, 'sm:400 400|f, lg:500 500|f, xl:600 600|f', 'lazyload-effect full-image', false, false); ?>
           </div>
         <?php endif; ?>

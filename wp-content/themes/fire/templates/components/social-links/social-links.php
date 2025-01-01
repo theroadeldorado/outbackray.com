@@ -5,7 +5,7 @@
   }
   foreach ($social_links as $platform => $link) {
     if($link):?>
-      <a class="block w-5 text-white no-underline" target="_blank" href="<?php echo $link;?>">
+      <a class="block w-10 text-current no-underline" target="_blank" href="<?php echo $link;?>">
         <?php new Fire_SVG('icon--social-' . $platform); ?>
         <span class="sr-only"><?php echo $platform; ?></span>
       </a>
