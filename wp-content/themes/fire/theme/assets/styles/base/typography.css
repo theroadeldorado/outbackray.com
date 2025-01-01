@@ -1,7 +1,7 @@
 @layer base {
   html,
   body {
-    @apply antialiased font-normal leading-normal text-gray-900 font-body;
+    @apply antialiased font-normal leading-normal text-dark-blue font-body;
     text-rendering: optimizeLegibility;
   }
 
@@ -39,15 +39,15 @@
   }
 
   .base-lg {
-    @apply text-[1.5rem]/[1.4] lg:text-[2rem]/[1.4];
+    @apply text-[1.25rem]/[1.4] lg:text-[1.75rem]/[1.4];
   }
 
   .base-normal {
-    @apply text-[1rem]/[1.4] lg:text-[1.5rem]/[1.4];
+    @apply text-[1rem]/[1.4] lg:text-[1.25rem]/[1.4];
   }
 
   .base-sm {
-    @apply text-[0.875rem]/[1.4] lg:text-[1rem]/[1.4];
+    @apply text-[0.75rem]/[1.4] lg:text-[1rem]/[1.4];
   }
 
   .prose {
@@ -56,6 +56,8 @@
 
   .prose,
   .wizzy {
+    @apply text-[1rem]/[1.4] lg:text-[1.25rem]/[1.4];
+
     p,
     h1,
     h2,
@@ -76,11 +78,12 @@
     }
 
     .button,
+    .button-outline,
     .link {
-      @apply mb-8 mt-[5px] last:mb-0 md:mt-8 md:last:mt-0;
+      @apply mb-8 mt-[5px] last:mb-0 md:mt-8 md:last:mt-0 mr-4;
     }
 
-    a:not(.button, .link) {
+    a:not(.button, .link, .button-outline) {
       @apply underline decoration-1 underline-offset-1 hover:no-underline;
     }
 

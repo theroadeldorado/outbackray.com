@@ -25,6 +25,13 @@
         </div>
       </div>
 
+      <div class="flex flex-col gap-2">
+        <div class="flex items-center justify-center w-full h-24 text-black bg-texture-waves">texture-waves</div>
+        <div class="flex items-center justify-center w-full h-24 text-black bg-texture-croc">texture-croc</div>
+        <div class="flex items-center justify-center w-full h-24 text-black bg-texture-snake">texture-snake</div>
+        <div class="flex items-center justify-center w-full h-24 text-black bg-texture-leaves">texture-leaves</div>
+        <div class="flex items-center justify-center w-full h-24 text-black bg-texture-leaves-2">texture-leaves-2</div>
+      </div>
       <hr>
 
       <h1>h1: Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>

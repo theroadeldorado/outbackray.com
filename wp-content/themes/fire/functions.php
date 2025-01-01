@@ -247,6 +247,77 @@ add_action('admin_footer', function() {
         });
       }
     });
+
+    jQuery(document).ready(function($) {
+    // Function to update the texture labels' background color
+    function updateTextureLabelBackground(colorClass) {
+        // Select all texture labels and update their background
+        $('.acf-field[data-name="background_texture"] .acf-button-group label span').each(function() {
+            // Remove only color classes, not texture classes
+            $(this).removeClass(function(index, className) {
+                return (className.match(/(^|\s)bg-(green|light-green|orange|light-orange|tan|light-tan|navy|light-navy|purple|light-purple|none)\b/g) || []).join(' ');
+            });
+            // Add the new background color class
+            $(this).addClass(colorClass);
+        });
+    }
+
+    // Listen for changes on the background color radio buttons
+    $('.acf-field[data-name="background_colors"] .acf-button-group input[type="radio"]').on('change', function() {
+        // Get the selected background color class
+        const selectedColor = $(this).val();
+        // Update the texture labels
+        updateTextureLabelBackground(selectedColor);
+    });
+
+    // Trigger the update function on page load for the pre-selected color
+    const initialColor = $('.acf-field[data-name="background_colors"] .acf-button-group input[type="radio"]:checked').val();
+    updateTextureLabelBackground(initialColor);
+});
+
   </script>
   <?php
 });
+
+
+function get_text_color($bg_color) {
+  if (strpos($bg_color, 'light') !== false || strpos($bg_color, 'tan') !== false) {
+    return 'text-dark-blue';
+  }
+  return 'text-white';
+}
+
+function get_shadow_color($bg_color) {
+  // Color pairs mapping
+  $color_pairs = [
+    'bg-green' => '#A5D6A7',
+    'bg-light-green' => '#4CAF50',
+    'bg-orange' => '#FFC107',
+    'bg-light-orange' => '#FF9800',
+    'bg-tan' => '#ECE4DB',
+    'bg-light-tan' => '#ADA289',
+    'bg-navy' => '#697D91',
+    'bg-light-navy' => '#2C3E50',
+    'bg-purple' => '#D1C4E9',
+    'bg-light-purple' => '#8E44AD',
+  ];
+
+  return isset($color_pairs[$bg_color]) ? $color_pairs[$bg_color] : '';
+}
+
+function get_secondary_color($bg_color) {
+  $color_pairs = [
+    'bg-green' => '#4CAF50',
+    'bg-orange' => '#FF9800',
+    'bg-tan' => '#ADA289',
+    'bg-navy' => '#2C3E50',
+    'bg-purple' => '#8E44AD',
+  ];
+
+  // Remove the original color from the array
+  unset($color_pairs[$bg_color]);
+
+  // Get random color from remaining colors
+  $random_key = array_rand($color_pairs);
+  return $color_pairs[$random_key];
+}

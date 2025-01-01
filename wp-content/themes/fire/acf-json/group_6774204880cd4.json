@@ -1,0 +1,80 @@
+{
+    "key": "group_6774204880cd4",
+    "title": "Colors",
+    "fields": [
+        {
+            "key": "field_67742048b199f",
+            "label": "Background Colors",
+            "name": "background_colors",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "45",
+                "class": "custom-group-color",
+                "id": ""
+            },
+            "choices": {
+                "bg-green": "<span class=\"bg-green\" title=\"Green\"><\/span>",
+                "bg-orange": "<span class=\"bg-orange\" title=\"Orange\"><\/span>",
+                "bg-navy": "<span class=\"bg-navy text-white\" title=\"Navy\"><\/span>",
+                "bg-purple": "<span class=\"bg-purple text-white\" title=\"Purple\"><\/span>",
+                "bg-tan": "<span class=\"bg-tan\" title=\"Tan\"><\/span>"
+            },
+            "default_value": "bg-green",
+            "return_format": "value",
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_677422dfb19a0",
+            "label": "Background Texture",
+            "name": "background_texture",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "55",
+                "class": "custom-group-color custom-group-color-texture",
+                "id": ""
+            },
+            "choices": {
+                "bg-none": "<span class=\"bg-none\" title=\"None\"><\/span>",
+                "bg-texture-waves": "<span class=\"bg-texture-waves\" title=\"Waves\"><\/span>",
+                "bg-texture-croc": "<span class=\"bg-texture-croc\" title=\"Croc\"><\/span>",
+                "bg-texture-snake": "<span class=\"bg-texture-snake\" title=\"Snake\"><\/span>",
+                "bg-texture-leaves": "<span class=\"bg-texture-leaves\" title=\"Leaves\"><\/span>",
+                "bg-texture-leaves-2": "<span class=\"bg-texture-leaves-2\" title=\"Leaves 2\"><\/span>"
+            },
+            "default_value": "bg-none",
+            "return_format": "value",
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "layout": "horizontal"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": false,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1735676070
+}

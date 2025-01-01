@@ -49,6 +49,38 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_67741815129b1": {
+                    "key": "layout_67741815129b1",
+                    "name": "copy_with_image",
+                    "label": "Copy with image",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_67741815129b3",
+                            "label": "Copy with image",
+                            "name": "copy_with_image",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6774158c29520"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_5eb2daeeb6582": {
                     "key": "layout_5eb2daeeb6582",
                     "name": "hero",
@@ -105,5 +137,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1723643837
+    "modified": 1735661610
 }

@@ -137,12 +137,17 @@
         ),
       ),
       array(
-        'title' => 'Font Family',
+        'title' => 'Buttons',
         'items' => array(
           array(
-            'title' => 'Open Sans',
-            'selector' => 'p, a, h1, h2, h3, h4, h5, h6, li, span',
-            'classes' => 'font-body'
+            'title' => 'Button Outline',
+            'selector' => 'a',
+            'classes' => 'button-outline'
+          ),
+          array(
+            'title' => 'Button',
+            'selector' => 'a',
+            'classes' => 'button'
           ),
         ),
       ),

@@ -93,7 +93,7 @@ html {
       }
 
       span {
-        @apply relative flex items-center justify-center font-bold text-center w-10 h-10 rounded-md;
+        @apply relative flex items-center justify-center font-bold text-center w-16 h-16 rounded-md;
 
         &:after {
           content: 'Aa';
@@ -102,7 +102,15 @@ html {
       }
     }
   }
+  &-texture {
+    .acf-button-group,
+    label,
+    span:after {
+      content: '' !important;
+    }
+  }
 }
+
 .layout {
   .fire-toggle-layout {
     @apply opacity-0;
@@ -141,5 +149,60 @@ html {
     svg {
       @apply flex items-center justify-center;
     }
+  }
+}
+
+.bg-texture-waves {
+  @apply bg-blend-multiply relative [&>*]:z-[1];
+
+  &::after {
+    @apply absolute inset-0 h-full w-full bg-repeat bg-left-top opacity-40 z-0;
+    content: '';
+    background-image: url('../theme/assets/media/images/waves.webp');
+    background-size: 140px;
+  }
+}
+
+.bg-texture-croc {
+  @apply bg-blend-multiply relative [&>*]:z-[1];
+
+  &::after {
+    @apply absolute inset-0 h-full w-full bg-repeat bg-left-top opacity-60 z-0;
+    content: '';
+    background-image: url('../theme/assets/media/images/croc.webp');
+    background-size: 140px;
+  }
+}
+
+.bg-texture-snake {
+  @apply bg-blend-multiply relative [&>*]:z-[1];
+
+  &::after {
+    @apply absolute inset-0 h-full w-full bg-repeat bg-left-top opacity-60 z-0;
+    content: '';
+    background-image: url('../theme/assets/media/images/snake.webp');
+    background-size: 280px;
+  }
+}
+
+.bg-texture-leaves {
+  @apply bg-blend-multiply relative [&>*]:z-[1];
+
+  &::after {
+    @apply absolute inset-0 h-full w-full bg-repeat bg-left-top opacity-60 z-0;
+    content: '';
+    background-image: url('../theme/assets/media/images/leaves.webp');
+    background-size: 400px;
+  }
+}
+
+.bg-texture-leaves-2 {
+  @apply bg-blend-multiply relative [&>*]:z-[1];
+
+  &::after {
+    @apply absolute inset-0 h-full w-full bg-repeat bg-left-top opacity-60 z-0;
+    content: '';
+    background-image: url('../theme/assets/media/images/leaves-2.webp');
+    background-size: 800px;
   }
 }

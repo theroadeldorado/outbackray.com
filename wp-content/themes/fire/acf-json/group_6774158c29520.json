@@ -1,9 +1,9 @@
 {
-    "key": "group_5eb2da339dd77",
-    "title": "Hero",
+    "key": "group_6774158c29520",
+    "title": "Copy with image",
     "fields": [
         {
-            "key": "field_5ebdec8112315",
+            "key": "field_6774158c2bcb3",
             "label": "Content",
             "name": "",
             "aria-label": "",
@@ -21,20 +21,42 @@
             "selected": 0
         },
         {
-            "key": "field_5eb2da91348c9",
+            "key": "field_67744ea56cf11",
+            "label": "Background",
+            "name": "background",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_6774204880cd4"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
+            "key": "field_6774158c2bcbb",
             "label": "Image",
             "name": "image",
             "aria-label": "",
             "type": "image",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "33",
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
+            "return_format": "id",
             "library": "all",
             "min_width": "",
             "min_height": "",
@@ -47,12 +69,12 @@
             "preview_size": "thumbnail"
         },
         {
-            "key": "field_677313b3a6fd3",
-            "label": "Show Ray",
-            "name": "show_ray",
+            "key": "field_6774158c2bcc8",
+            "label": "Full height Image",
+            "name": "full_height_image",
             "aria-label": "",
             "type": "true_false",
-            "instructions": "This will add the picture of Ray with the snake to the left. Best used only for the homepage.",
+            "instructions": "If not full height image will be wrapped in a border and rotated slighly.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -68,12 +90,12 @@
             "ui": 1
         },
         {
-            "key": "field_6773138287d31",
-            "label": "Full screen",
-            "name": "full_screen",
+            "key": "field_6774160d31d7a",
+            "label": "Image Position",
+            "name": "image_position",
             "aria-label": "",
             "type": "true_false",
-            "instructions": "This will make the section have a min height of the browser window.",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -84,12 +106,12 @@
             "message": "",
             "default_value": 1,
             "allow_in_bindings": 0,
-            "ui_on_text": "",
-            "ui_off_text": "",
+            "ui_on_text": "Left",
+            "ui_off_text": "Right",
             "ui": 1
         },
         {
-            "key": "field_5eb2da71348c8",
+            "key": "field_6774158c2bcce",
             "label": "Copy",
             "name": "copy",
             "aria-label": "",
@@ -109,7 +131,7 @@
             "delay": 0
         },
         {
-            "key": "field_5ebdec9012316",
+            "key": "field_6774158c2bcd5",
             "label": "Settings",
             "name": "",
             "aria-label": "",
@@ -127,7 +149,7 @@
             "selected": 0
         },
         {
-            "key": "field_5ebdecdd4f56f",
+            "key": "field_6774158c2bcdb",
             "label": "Settings",
             "name": "settings",
             "aria-label": "",
@@ -167,5 +189,5 @@
     "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1735661803
+    "modified": 1735678508
 }
