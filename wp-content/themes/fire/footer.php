@@ -16,13 +16,18 @@ $phone_number_stripped = preg_replace('/[^0-9]/', '', $phone_number);
 ?>
 
   <footer class="bg-dark-blue py-20 bg-texture-croc text-white fire-container">
+     <?php if($phone_number):?>
+      <div class="text-center mb-10">
+        <a href="tel:<?php echo $phone_number_stripped;?>" class="md:hidden heading-4 text-white no-underline hover:text-purple"><?php echo $phone_number;?></a>
+      </div>
+     <?php endif;?>
     <?php
       wp_nav_menu(
         array(
           'container'       => false,
           'depth'           => 1,
           'theme_location'  => 'primary',
-          'menu_class' => 'flex gap-[1.5rem] xl:gap-[3.5rem] mb-10 justify-center flex-wrap',
+          'menu_class' => 'flex gap-[1.5rem] xl:gap-[3.5rem] mb-12 lg:mb-10 justify-center flex-wrap',
           'item_0' => 'item_class',
           'link_0' => 'font-semibold text-[1.5rem] xl:text-[2rem] block text-white no-underline hover:text-purple hover:scale-110 transition-all duration-300 ease-bounce hover:rotate-3',
           'sub_menu_class' => 'sub_menu_class',
@@ -43,11 +48,11 @@ $phone_number_stripped = preg_replace('/[^0-9]/', '', $phone_number);
       </div>
     <?php endif;?>
 
-    <div class="flex justify-center items-center text-center gap-x-3">
+    <div class="flex flex-col md:flex-row justify-center items-center text-center gap-x-3">
       <?php echo sprintf('© %s %s', date('Y'), get_bloginfo('name')); ?>
       <?php if($phone_number):?>
-        <span class="block">|</span>
-        <a href="tel:<?php echo $phone_number_stripped;?>" class="text-white no-underline hover:text-purple"><?php echo $phone_number;?></a>
+        <span class="hidden md:block">|</span>
+        <a href="tel:<?php echo $phone_number_stripped;?>" class="hidden md:block text-white no-underline hover:text-purple"><?php echo $phone_number;?></a>
       <?php endif;?>
     </div>
   </footer>
