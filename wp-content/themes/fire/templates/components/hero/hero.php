@@ -22,7 +22,7 @@
 
     <?php if($copy):?>
       <div class="col-[main] md:col-[col-1/col-8] row-start-1 relative flex items-center z-[2] h-full">
-        <div class="wizzy text-white <?php echo $full_screen ? 'py-24' : 'pt-20 pb-8'; ?>">
+        <div class="wizzy text-white <?php echo $full_screen ? 'py-24' : 'pt-24 pb-8'; ?>">
           <?php echo $copy; ?>
         </div>
       </div>

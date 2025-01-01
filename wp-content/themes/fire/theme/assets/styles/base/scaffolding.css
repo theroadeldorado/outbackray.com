@@ -1,4 +1,8 @@
 @layer base {
+  html {
+    @apply scroll-smooth selection:bg-light-orange selection:text-purple;
+  }
+
   .site {
     @apply flex flex-col min-h-screen;
 

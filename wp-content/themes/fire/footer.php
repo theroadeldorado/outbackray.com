@@ -10,28 +10,45 @@
  */
 
 $global_scripts = function_exists('get_field') ? get_field('scripts', 'site_settings') : false;
-
+$social_links = get_field('social_links', 'site_settings');
+$phone_number = get_field('phone_number', 'site_settings');
+$phone_number_stripped = preg_replace('/[^0-9]/', '', $phone_number);
 ?>
 
-  <footer class="text-white bg-gray-500 fire-container">
-    <div>
-      <div>
-        <?php
-          wp_nav_menu(
-            array(
-              'container'       => false,
-              'depth'           => 2,
-              'theme_location'  => 'footer',
-              'menu_class'      => 'menu_class',
-              'link_class'      => 'link_class',
-              'sub_link_class' => 'sub_link_class',
-              'sub_menu_class' => 'sub_menu_class',
-            )
-          );
-        ?>
-      </div>
-      <?php echo sprintf('© %s %s', date('Y'), get_bloginfo('name')); ?>
+  <footer class="bg-dark-blue py-20 bg-texture-croc text-white fire-container">
+    <?php
+      wp_nav_menu(
+        array(
+          'container'       => false,
+          'depth'           => 1,
+          'theme_location'  => 'primary',
+          'menu_class' => 'flex gap-[1.5rem] xl:gap-[3.5rem] mb-10 justify-center flex-wrap',
+          'item_0' => 'item_class',
+          'link_0' => 'font-semibold text-[1.5rem] xl:text-[2rem] block text-white no-underline hover:text-purple hover:scale-110 transition-all duration-300 ease-bounce hover:rotate-3',
+          'sub_menu_class' => 'sub_menu_class',
+        )
+      );
+    ?>
 
+    <?php if(!empty($social_links)):?>
+      <div class="flex items-center justify-center gap-x-8 gap-y-4 flex-wrap mb-10">
+        <?php foreach ($social_links as $platform => $link) :
+          if($link):?>
+            <a class="block w-10 text-current no-underline hover:text-purple hover:scale-110 hover:-rotate-3 transition-all duration-300 ease-bounce" target="_blank" href="<?php echo $link;?>">
+              <?php new Fire_SVG('icon--social-' . $platform); ?>
+              <span class="sr-only"><?php echo $platform; ?></span>
+            </a>
+          <?php endif;
+        endforeach;?>
+      </div>
+    <?php endif;?>
+
+    <div class="flex justify-center items-center text-center gap-x-3">
+      <?php echo sprintf('© %s %s', date('Y'), get_bloginfo('name')); ?>
+      <?php if($phone_number):?>
+        <span class="block">|</span>
+        <a href="tel:<?php echo $phone_number_stripped;?>" class="text-white no-underline hover:text-purple"><?php echo $phone_number;?></a>
+      <?php endif;?>
     </div>
   </footer>
 </div><!-- #page -->

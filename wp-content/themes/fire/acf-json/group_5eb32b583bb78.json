@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_5ebb05686f039",
-            "label": "Social",
+            "label": "Social and Footer",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -19,6 +19,27 @@
             "placement": "top",
             "endpoint": 0,
             "selected": 0
+        },
+        {
+            "key": "field_6775a51a3ab0d",
+            "label": "Phone Number",
+            "name": "phone_number",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "(216) 381-1130",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_67759dad33c68",
@@ -330,5 +351,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1735761356
+    "modified": 1735763273
 }
