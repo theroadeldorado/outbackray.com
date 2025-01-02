@@ -3,7 +3,7 @@
     @apply scroll-smooth selection:bg-light-orange selection:text-purple;
   }
 
-  body {
+  body:not(.wp-admin):not(.mce-content-body) {
     @apply bg-light-tan;
   }
 

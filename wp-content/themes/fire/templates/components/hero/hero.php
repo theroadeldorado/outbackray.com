@@ -13,7 +13,7 @@
 <?php $section->start(); ?>
 
   <div class="fire-container relative overflow-hidden <?php echo $full_screen ? 'min-h-screen' : ''; ?>">
-    <div class="full-width relative row-start-1">
+    <div class="full-width absolute inset-0">
       <div class="absolute w-full h-full bg-gradient-to-b from-black/50 to-black/45 inset-0" aria-hidden></div>
       <?php if($image):?>
         <?php echo ResponsivePics::get_picture($image['id'], 'sm:600 800|f, md:900 506|f, lg:1200 675|f, xl:1920 1080|f', 'lazyload-effect full-image', false, false); ?>
@@ -22,7 +22,7 @@
 
     <?php if($copy):?>
       <div class="col-[main] md:col-[col-1/col-8] row-start-1 relative flex items-center z-[2] h-full">
-        <div class="wizzy text-white <?php echo $full_screen ? 'py-24' : 'pt-24 pb-8'; ?>">
+        <div class="wizzy text-white <?php echo $full_screen ? 'py-48' : 'pt-32 pb-16 lg:pt-48 lg:pb-20 xl:pt-52'; ?>">
           <?php echo $copy; ?>
         </div>
       </div>

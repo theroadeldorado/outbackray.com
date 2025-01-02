@@ -89,7 +89,7 @@
 
 
     <?php if ($image) : ?>
-      <div class="row-start-1
+      <div class="row-start-1 relative
         <?php echo $full_height_image && $image_left ? 'col-[full-width] md:col-[full-width/col-7]':'';?>
         <?php echo $full_height_image && !$image_left ? 'col-[full-width] md:col-[col-6/full-width]':'';?>
         <?php echo !$full_height_image && $image_left ? 'col-[main] md:col-[col-2/col-6]':'';?>
@@ -97,10 +97,11 @@
         <?php echo $full_height_image ? 'clip-path-'.$section->count:'';?>
       ">
         <?php if ($full_height_image) : ?>
+          <div class="absolute top-0 w-full bottom-0 <?php echo $image_left ? 'left-0':'right-0';?>">
+            <div aria-hidden class="absolute hidden md:block -translate-y-1/2 <?php echo $image_left ? 'left-0':'right-0';?>" style="<?php echo $shape_style; ?>"></div>
 
-          <div aria-hidden class="absolute hidden md:block -translate-y-1/2 <?php echo $image_left ? 'left-0':'right-0';?>" style="<?php echo $shape_style; ?>"></div>
-
-          <?php echo ResponsivePics::get_picture($image, 'sm:600 400|f, md:500 500|f, lg:600 600|f, xl:950 950|f, xxl:1200 1200|f', 'lazyload-effect full-image scale-[1.01]', false, false); ?>
+            <?php echo ResponsivePics::get_picture($image, 'sm:600 400|f, md:500 500|f, lg:600 600|f, xl:950 950|f, xxl:1200 1200|f', 'lazyload-effect full-image scale-[1.01]', false, false); ?>
+          </div>
         <?php else : ?>
           <div class="relative my-0 md:my-20 lg:my-40 overflow-clip rounded-[30px] drop-shadow-[-12px_-11px_0px_var(--shadow-color)] lg:drop-shadow-[-24px_-23px_0px_var(--shadow-color)]" style="--shadow-color: <?php echo $shadow_color; ?>; transform: rotate(<?php echo $rotate_image; ?>deg);">
             <?php echo ResponsivePics::get_picture($image, 'sm:400 400|f, lg:500 500|f, xl:600 600|f', 'lazyload-effect full-image', false, false); ?>
