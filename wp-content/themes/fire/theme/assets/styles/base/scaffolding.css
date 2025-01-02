@@ -67,10 +67,10 @@
   }
 
   .bg-texture-waves {
-    @apply relative [&>*]:z-[1];
+    @apply relative [&>*]:z-[1] [&>*]:relative;
 
     &::after {
-      @apply bg-blend-multiply absolute inset-0 bg-repeat bg-left-top opacity-[0.03] z-0;
+      @apply bg-blend-multiply absolute inset-0 bg-repeat bg-left-top opacity-[0.03] !z-0;
       content: '';
       background-image: url('../theme/assets/media/images/waves.webp');
       background-size: 350px;
@@ -78,10 +78,10 @@
   }
 
   .bg-texture-croc {
-    @apply relative [&>*]:z-[1];
+    @apply relative [&>*]:z-[1] [&>*]:relative;
 
     &::after {
-      @apply bg-blend-multiply absolute inset-0 bg-repeat bg-left-top opacity-[0.03] z-0;
+      @apply bg-blend-multiply absolute inset-0 bg-repeat bg-left-top opacity-[0.03] !z-0;
       content: '';
       background-image: url('../theme/assets/media/images/croc.webp');
       background-size: 400px;
@@ -89,10 +89,10 @@
   }
 
   .bg-texture-snake {
-    @apply relative [&>*]:z-[1];
+    @apply relative [&>*]:z-[1] [&>*]:relative;
 
     &::after {
-      @apply bg-blend-multiply absolute inset-0 bg-repeat bg-left-top opacity-[0.05] z-0;
+      @apply bg-blend-multiply absolute inset-0 bg-repeat bg-left-top opacity-[0.05] !z-0;
       content: '';
       background-image: url('../theme/assets/media/images/snake.webp');
       background-size: 300px;
@@ -100,10 +100,10 @@
   }
 
   .bg-texture-leaves {
-    @apply relative [&>*]:z-[1];
+    @apply relative [&>*]:z-[1] [&>*]:relative;
 
     &::after {
-      @apply absolute inset-0 bg-repeat bg-blend-soft-light bg-left-top opacity-[0.08] z-0;
+      @apply absolute inset-0 bg-repeat bg-blend-soft-light bg-left-top opacity-[0.08] !z-0;
       content: '';
       background-image: url('../theme/assets/media/images/leaves.webp');
       background-size: 600px;
@@ -111,10 +111,10 @@
   }
 
   .bg-texture-leaves-2 {
-    @apply relative [&>*]:z-[1];
+    @apply relative [&>*]:z-[1] [&>*]:relative;
 
     &::after {
-      @apply absolute bg-blend-soft-light inset-0 bg-repeat bg-left-top opacity-[0.2] z-0;
+      @apply absolute bg-blend-soft-light inset-0 bg-repeat bg-left-top opacity-[0.2] !z-0;
       content: '';
       background-image: url('../theme/assets/media/images/leaves-2.webp');
       background-size: 800px;

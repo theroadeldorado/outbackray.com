@@ -18,3 +18,58 @@
 @import 'tailwindcss/utilities';
 
 @config '../tailwind.site.config.js';
+
+.wp-gr {
+  @apply relative z-[2] !important;
+  &[data-layout='slider'] .grw-reviews {
+    @apply mx-0 px-0 scroll-mx-[var(--fire-content-padding)] !important;
+  }
+
+  .grw-review-inner {
+    @apply rounded-2xl overflow-hidden !important;
+  }
+
+  .wp-google-left {
+    img {
+      @apply shadow-none rounded-full block overflow-hidden !important;
+
+      .wp-google-time {
+        @apply text-light-purple !important;
+      }
+    }
+
+    a.wp-google-name {
+      @apply text-purple !important;
+    }
+  }
+
+  .rpi-dot {
+    @apply size-5 duration-300 ease-in-out transition-all bg-light-purple hover:bg-purple/75 !important;
+
+    &.active {
+      @apply bg-purple !important;
+    }
+  }
+}
+
+[class*='bg-purple'] .wp-gr {
+  .wp-google-left {
+    img {
+      .wp-google-time {
+        @apply text-light-orange !important;
+      }
+    }
+
+    a.wp-google-name {
+      @apply text-orange !important;
+    }
+  }
+
+  .rpi-dot {
+    @apply bg-light-orange hover:bg-orange/75 !important;
+
+    &.active {
+      @apply bg-orange !important;
+    }
+  }
+}

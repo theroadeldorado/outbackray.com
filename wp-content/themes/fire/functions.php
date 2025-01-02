@@ -281,7 +281,7 @@ add_action('admin_footer', function() {
 
 
 function get_text_color($bg_color) {
-  if (strpos($bg_color, 'light') !== false || strpos($bg_color, 'tan') !== false) {
+  if (strpos($bg_color, 'light') !== false ) {
     return 'text-dark-blue';
   }
   return 'text-white';

@@ -50,10 +50,6 @@ $phone_number_stripped = preg_replace('/[^0-9]/', '', $phone_number);
 
     <div class="flex flex-col md:flex-row justify-center items-center text-center gap-x-3">
       <?php echo sprintf('© %s %s', date('Y'), get_bloginfo('name')); ?>
-      <?php if($phone_number):?>
-        <span class="hidden lg:block">|</span>
-        <a href="tel:<?php echo $phone_number_stripped;?>" class="hidden lg:block text-white no-underline hover:text-purple"><?php echo $phone_number;?></a>
-      <?php endif;?>
     </div>
   </footer>
 </div><!-- #page -->

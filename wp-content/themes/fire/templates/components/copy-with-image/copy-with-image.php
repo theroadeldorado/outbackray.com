@@ -33,7 +33,7 @@
     $points[] = '0% 100%'; // Bottom left
 
   } else {
-    $points[] = 'calc(0% + (var(--fire-content-max-width) / 12 - var(--fire-content-gap-x)/2)) 0%'; // Top left
+    $points[] = 'calc((0% + (var(--fire-content-max-width) / 12) + var(--fire-content-gap-x)/2)) 0%'; // Top left
     // Random number of points between 5-7
     $num_points = rand(5, 7);
     $prev_y = 0;
@@ -44,7 +44,7 @@
       $prev_y = $y_pos;
       $points[] = "{$x_pos}% {$y_pos}%";
     }
-    $points[] = 'calc(0% + (var(--fire-content-max-width) / 12 - var(--fire-content-gap-x)/2)) 100%'; // Bottom left
+    $points[] = 'calc((0% + (var(--fire-content-max-width) / 12) + var(--fire-content-gap-x)/2)) 100%'; // Bottom left
     $points[] = '100% 100%'; // Bottom right
     $points[] = '100% 0%'; // Top right
   }
@@ -55,7 +55,7 @@
     'polygon(1% 74%, 0 38%, 4% 8%, 31% 1%, 55% 8%, 75% 4%, 99% 10%, 100% 39%, 100% 94%, 59% 96%, 38% 83%, 5% 98%)',
     'polygon(10% 69%, 1% 37%, 18% 21%, 6% 0, 54% 4%, 67% 15%, 95% 1%, 100% 81%, 88% 100%, 55% 88%, 20% 97%, 0 90%)'
   ];
-  $random_rotate = rand(-13, 13);
+  $random_rotate = rand(-7, 7);
   $random_top = rand(-10, 85);
   $random_width = 'calc(var(--fire-content-max-width) / 12 * ' . number_format(rand(100, 250) / 100, 2) . ')';
   $random_height = rand(30, 80);
@@ -100,7 +100,7 @@
 
           <div aria-hidden class="absolute hidden md:block -translate-y-1/2 <?php echo $image_left ? 'left-0':'right-0';?>" style="<?php echo $shape_style; ?>"></div>
 
-          <?php echo ResponsivePics::get_picture($image, 'sm:600 400|f, md:500 500|f, lg:600 600|f, xl:950 950|f, xxl:1200 1200|f', 'lazyload-effect full-image', false, false); ?>
+          <?php echo ResponsivePics::get_picture($image, 'sm:600 400|f, md:500 500|f, lg:600 600|f, xl:950 950|f, xxl:1200 1200|f', 'lazyload-effect full-image scale-[1.01]', false, false); ?>
         <?php else : ?>
           <div class="relative my-0 md:my-20 lg:my-40 overflow-clip rounded-[30px] drop-shadow-[-12px_-11px_0px_var(--shadow-color)] lg:drop-shadow-[-24px_-23px_0px_var(--shadow-color)]" style="--shadow-color: <?php echo $shadow_color; ?>; transform: rotate(<?php echo $rotate_image; ?>deg);">
             <?php echo ResponsivePics::get_picture($image, 'sm:400 400|f, lg:500 500|f, xl:600 600|f', 'lazyload-effect full-image', false, false); ?>
