@@ -92,17 +92,17 @@ if (!function_exists('get_field')) {
           // Colors to cycle through
           $colors = array('light-green', 'light-orange', 'light-purple', 'light-navy');
 
-          add_filter('nav_menu_link_attributes', function($atts, $item) use ($rotations) {
+          add_filter('nav_menu_link_attributes', function($atts, $item) use ($colors) {
             $index = $item->menu_order - 1;
-            $rotation = $rotations[$index];
-            $atts['class'] = "text-white lg:text-current font-semibold text-[3rem] lg:text-[1.5rem] xl:text-[2rem] no-underline lg:hover:scale-110 transition-all duration-300 ease-bounce lg:hover:rotate-[$rotation"."deg] block";
+            $color = $colors[$index % count($colors)];
+            $atts['class'] = "text-white lg:hover:text-$color no-underline";
             return $atts;
           }, 10, 2);
 
-          add_filter('nav_menu_css_class', function($classes, $item) use ($colors) {
+          add_filter('nav_menu_css_class', function($classes, $item) use ($rotations) {
             $index = $item->menu_order - 1;
-            $color = $colors[$index % count($colors)];
-            $classes[] = "lg:hover:text-$color";
+            $rotation = $rotations[$index];
+            $classes[] = "lg:text-current font-semibold text-[3rem] lg:text-[1.5rem] xl:text-[2rem] no-underline lg:hover:scale-110 transition-all duration-300 ease-bounce lg:hover:rotate-[$rotation"."deg] block";
             return $classes;
           }, 10, 2);
 
