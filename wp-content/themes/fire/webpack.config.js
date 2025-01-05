@@ -1,7 +1,6 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const FireConfig = require('./fire.config');
 const TerserPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
@@ -96,16 +95,6 @@ module.exports = {
       verbose: true,
       cleanAfterEveryBuildPatterns: ['!fonts/*'],
     }),
-    new BrowserSyncPlugin(
-      {
-        proxy: FireConfig.PROXY_URL,
-        port: process.env.PORT || FireConfig.DEFAULT_PORT,
-        files: FireConfig.WATCHED_FILES,
-        ghostMode: false,
-        open: false,
-      },
-      { injectCss: true }
-    ),
   ],
   optimization: {
     minimize: isProduction,

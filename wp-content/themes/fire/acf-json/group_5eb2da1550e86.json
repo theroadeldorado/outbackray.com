@@ -17,6 +17,38 @@
                 "id": ""
             },
             "layouts": {
+                "layout_677953054dc52": {
+                    "key": "layout_677953054dc52",
+                    "name": "animal_listing",
+                    "label": "Animal Listing",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_677953054dc54",
+                            "label": "Animal Listing",
+                            "name": "animal_listing",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6779522c51802"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_66bcb79f3aa5f": {
                     "key": "layout_66bcb79f3aa5f",
                     "name": "copy",
@@ -201,5 +233,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1735780536
+    "modified": 1736004379
 }

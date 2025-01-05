@@ -33,7 +33,7 @@
     $points[] = '0% 100%'; // Bottom left
 
   } else {
-    $points[] = 'calc((0% + (var(--fire-content-max-width) / 12) + var(--fire-content-gap-x)/2)) 0%'; // Top left
+    $points[] = 'calc(var(--fire-content-max-width) / 12 + var(--fire-content-gap-x)/2) 0%'; // Top left
     // Random number of points between 5-7
     $num_points = rand(5, 7);
     $prev_y = 0;
@@ -44,7 +44,7 @@
       $prev_y = $y_pos;
       $points[] = "{$x_pos}% {$y_pos}%";
     }
-    $points[] = 'calc((0% + (var(--fire-content-max-width) / 12) + var(--fire-content-gap-x)/2)) 100%'; // Bottom left
+    $points[] = 'calc(var(--fire-content-max-width) / 12 + var(--fire-content-gap-x)/2) 100%'; // Bottom left
     $points[] = '100% 100%'; // Bottom right
     $points[] = '100% 0%'; // Top right
   }

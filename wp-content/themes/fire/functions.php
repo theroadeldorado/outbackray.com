@@ -228,53 +228,79 @@ add_action('admin_footer', function() {
   <script>
     jQuery(document).ready(function($) {
       // Check if we're in the media library
-      if (wp.media) {
-        wp.media.view.Attachment.Details.TwoColumn = wp.media.view.Attachment.Details.TwoColumn.extend({
-          render: function() {
-            // Call the parent render method
-            wp.media.view.Attachment.Details.prototype.render.apply(this, arguments);
+      if (typeof wp !== 'undefined' && wp.media) {
+        var AttachmentDetails = wp.media.view.Attachment.Details;
+        var AttachmentDetailsTwoColumn = wp.media.view.Attachment.Details.TwoColumn;
 
-            // Get the filename
-            var filename = this.model.get('filename');
+        if (AttachmentDetailsTwoColumn) {
+          wp.media.view.Attachment.Details.TwoColumn = AttachmentDetailsTwoColumn.extend({
+            render: function() {
+              // Call the parent render method
+              AttachmentDetailsTwoColumn.prototype.render.apply(this, arguments);
 
-            // If this is logo.png, remove the delete button
-            if (filename === 'logo.png' || filename === 'ray.png') {
-              this.$el.find('.delete-attachment').remove();
+              // Get the filename
+              var filename = this.model.get('filename');
+
+              // If this is logo.png, remove the delete button
+              if (filename === 'logo.png' || filename === 'ray.png') {
+                this.$el.find('.delete-attachment').remove();
+              }
+
+              return this;
             }
-
-            return this;
-          }
-        });
+          });
+        }
       }
     });
 
     jQuery(document).ready(function($) {
-    // Function to update the texture labels' background color
-    function updateTextureLabelBackground(colorClass) {
-        // Select all texture labels and update their background
-        $('.acf-field[data-name="background_texture"] .acf-button-group label span').each(function() {
-            // Remove only color classes, not texture classes
-            $(this).removeClass(function(index, className) {
-                return (className.match(/(^|\s)bg-(green|light-green|orange|light-orange|tan|light-tan|navy|light-navy|purple|light-purple|none)\b/g) || []).join(' ');
-            });
-            // Add the new background color class
-            $(this).addClass(colorClass);
+      // Function to update the texture labels' background color within a specific layout
+      function updateTextureLabelBackground($layout, colorClass) {
+        // Select texture labels only within this layout and update their background
+        $layout.find('.acf-field[data-name="background_texture"] .acf-button-group label span').each(function() {
+          // Remove only color classes, not texture classes
+          $(this).removeClass(function(index, className) {
+            return (className.match(/(^|\s)bg-(green|light-green|orange|light-orange|tan|light-tan|navy|light-navy|purple|light-purple|none)\b/g) || []).join(' ');
+          });
+          // Add the new background color class
+          $(this).addClass(colorClass);
         });
-    }
+      }
 
-    // Listen for changes on the background color radio buttons
-    $('.acf-field[data-name="background_colors"] .acf-button-group input[type="radio"]').on('change', function() {
-        // Get the selected background color class
-        const selectedColor = $(this).val();
-        // Update the texture labels
-        updateTextureLabelBackground(selectedColor);
+      // Listen for changes on background color radio buttons within each layout
+      $('.layout').each(function() {
+        const $layout = $(this);
+
+        // Handle radio button changes
+        $layout.find('.acf-field[data-name="background_colors"] .acf-button-group input[type="radio"]').on('change', function() {
+          const selectedColor = $(this).val();
+          updateTextureLabelBackground($layout, selectedColor);
+        });
+
+        // Set initial colors
+        const initialColor = $layout.find('.acf-field[data-name="background_colors"] .acf-button-group input[type="radio"]:checked').val();
+        if (initialColor) {
+          updateTextureLabelBackground($layout, initialColor);
+        }
+      });
+
+      // Handle newly added layouts
+      acf.addAction('append_field/type=flexible_content', function($el) {
+        const $newLayout = $el.find('.layout').last();
+
+        // Set up event handlers for the new layout
+        $newLayout.find('.acf-field[data-name="background_colors"] .acf-button-group input[type="radio"]').on('change', function() {
+          const selectedColor = $(this).val();
+          updateTextureLabelBackground($newLayout, selectedColor);
+        });
+
+        // Set initial colors for new layout
+        const initialColor = $newLayout.find('.acf-field[data-name="background_colors"] .acf-button-group input[type="radio"]:checked').val();
+        if (initialColor) {
+          updateTextureLabelBackground($newLayout, initialColor);
+        }
+      });
     });
-
-    // Trigger the update function on page load for the pre-selected color
-    const initialColor = $('.acf-field[data-name="background_colors"] .acf-button-group input[type="radio"]:checked').val();
-    updateTextureLabelBackground(initialColor);
-});
-
   </script>
   <?php
 });
@@ -319,4 +345,25 @@ function get_secondary_color($bg_color) {
   // Get random color from remaining colors
   $random_key = array_rand($color_pairs);
   return $color_pairs[$random_key];
+}
+
+
+function get_youtube_id($url) {
+    $pattern =
+        '%^# Match any youtube URL
+        (?:https?://)?  # Optional scheme
+        (?:www\.)?      # Optional www
+        (?:             # Group host alternatives
+          youtu\.be/    # Either youtu.be,
+        | youtube\.com  # or youtube.com
+          (?:           # Group path alternatives
+            /embed/     # Either /embed/
+          | /v/         # or /v/
+          | /watch\?v=  # or /watch\?v=
+          )            # End path alternatives.
+        )              # End host alternatives.
+        ([\w-]{10,12}) # Allow 10-12 for 11 char youtube id.
+        $%x';
+    $result = preg_match($pattern, $url, $matches);
+    return ($result) ? $matches[1] : false;
 }

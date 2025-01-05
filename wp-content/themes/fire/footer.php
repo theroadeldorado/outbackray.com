@@ -16,11 +16,11 @@ $phone_number_stripped = preg_replace('/[^0-9]/', '', $phone_number);
 ?>
 
   <footer class="bg-dark-blue py-14 lg:py-20 bg-texture-croc text-white fire-container">
-     <?php if($phone_number):?>
+    <?php if($phone_number):?>
       <div class="text-center mb-10 lg:overflow-hidden">
         <a href="tel:<?php echo $phone_number_stripped;?>" class=" heading-4 text-white no-underline hover:text-purple"><?php echo $phone_number;?></a>
       </div>
-     <?php endif;?>
+    <?php endif;?>
     <?php
       wp_nav_menu(
         array(
