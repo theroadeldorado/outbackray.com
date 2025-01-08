@@ -20,9 +20,12 @@
     background-size: 10px;
   }
   label {
-    @apply text-[0.75rem] uppercase font-bold mb-1;
+    @apply text-[0.75rem] uppercase font-bold mb-1.5 ml-2;
   }
   fieldset {
+    @apply mb-3 last:mb-0;
+  }
+  .gfield {
     @apply mb-3 last:mb-0;
   }
   input[type='radio'],
@@ -32,4 +35,15 @@
   .gform-footer {
     @apply mt-4;
   }
+}
+
+.gform_validation_errors {
+  @apply bg-red-500 text-white p-4 rounded-3xl border-2 border-red-800;
+  a {
+    @apply text-white no-underline hover:underline;
+  }
+}
+
+.gform_confirmation_message {
+  @apply font-bold heading-6;
 }

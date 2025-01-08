@@ -17,13 +17,13 @@
 <?php $section->start(); ?>
   <div class="fire-container relative z-[1]">
     <?php if ($copy) : ?>
-      <div class="wizzy col-[main] md:col-[col-2/col-6]">
+      <div class="wizzy col-[main] md:col-[col-2/col-5] mb-10">
         <?php echo $copy; ?>
       </div>
     <?php endif; ?>
     <?php if ($form) : ?>
       <div class="col-[main] md:col-[col-7/col-11]">
-        <?php echo do_shortcode('[gravityform id="'.$form.'" title="true" ajax="true"]'); ?>
+        <?php echo do_shortcode('[gravityform id="'.$form.'" title="false" ajax="true"]'); ?>
       </div>
     <?php endif; ?>
   </div>
