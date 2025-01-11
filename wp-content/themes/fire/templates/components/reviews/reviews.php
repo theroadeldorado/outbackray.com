@@ -16,7 +16,7 @@
 <?php $section->start(); ?>
 
   <?php if(shortcode_exists('trustindex')): ?>
-    <div class="fire-container">
+    <div class="fire-container relative z-[1]">
       <?php if($heading):?>
         <?php new Fire_Heading($tag, $heading, 'heading-3 font-bold text-center mb-5 lg:mb-10');?>
       <?php endif;?>
