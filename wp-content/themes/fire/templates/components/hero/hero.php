@@ -30,7 +30,7 @@
 
     <?php if($show_ray):?>
       <div class="hidden lg:flex col-[main] md:col-[col-9/full-width] xl:col-[col-10/full-width] row-start-1 h-full relative items-end  <?php echo $full_screen ? 'pt-24 ' : 'mt-20 items-start'; ?>">
-        <?php echo ResponsivePics::get_picture(75, 'sm:550', 'lazyload-effect', false, false); ?>
+        <?php echo ResponsivePics::get_picture(72, 'sm:550', 'lazyload-effect', false, false); ?>
       </div>
     <?php endif; ?>
   </div>
