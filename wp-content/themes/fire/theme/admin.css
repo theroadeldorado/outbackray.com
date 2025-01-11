@@ -206,3 +206,11 @@ html {
     background-size: 800px;
   }
 }
+
+[data-layout='copy'] {
+  .mce-edit-area {
+    .prose {
+      @apply text-center !important;
+    }
+  }
+}

@@ -1,9 +1,9 @@
 {
-    "key": "group_66bcb71eb77be",
-    "title": "Copy",
+    "key": "group_67828f27c1ecc",
+    "title": "Gallery",
     "fields": [
         {
-            "key": "field_66bcb71eda1e2",
+            "key": "field_67828f27c4a0b",
             "label": "Content",
             "name": "",
             "aria-label": "",
@@ -21,9 +21,9 @@
             "selected": 0
         },
         {
-            "key": "field_67828b4fc53f6",
-            "label": "Colors",
-            "name": "colors",
+            "key": "field_67828f27c4a13",
+            "label": "Background",
+            "name": "background",
             "aria-label": "",
             "type": "clone",
             "instructions": "",
@@ -43,16 +43,16 @@
             "prefix_name": 0
         },
         {
-            "key": "field_66bcb74bda1e4",
+            "key": "field_67828f27c4a37",
             "label": "Copy",
             "name": "copy",
             "aria-label": "",
             "type": "wysiwyg",
-            "instructions": "For this section text will always be centered",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -64,7 +64,35 @@
             "delay": 0
         },
         {
-            "key": "field_66bcb757da1e5",
+            "key": "field_67828f462a03b",
+            "label": "Gallery",
+            "name": "gallery",
+            "aria-label": "",
+            "type": "gallery",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min": 8,
+            "max": "",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "insert": "append",
+            "preview_size": "thumbnail"
+        },
+        {
+            "key": "field_67828f27c4a3f",
             "label": "Settings",
             "name": "",
             "aria-label": "",
@@ -82,7 +110,7 @@
             "selected": 0
         },
         {
-            "key": "field_66bcb760da1e6",
+            "key": "field_67828f27c4a46",
             "label": "Settings",
             "name": "settings",
             "aria-label": "",
@@ -109,7 +137,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "post"
+                "value": "page"
             }
         ]
     ],
@@ -122,5 +150,5 @@
     "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1736619217
+    "modified": 1736613648
 }

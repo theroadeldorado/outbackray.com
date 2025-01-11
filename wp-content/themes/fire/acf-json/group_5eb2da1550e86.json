@@ -113,6 +113,38 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_6782af7899c60": {
+                    "key": "layout_6782af7899c60",
+                    "name": "featured_animals",
+                    "label": "Featured Animals",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6782af7899c62",
+                            "label": "Featured Animals",
+                            "name": "featured_animals",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6782aeb389dec"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_677b356020cd0": {
                     "key": "layout_677b356020cd0",
                     "name": "form",
@@ -135,6 +167,38 @@
                             },
                             "clone": [
                                 "group_677b34bc833bd"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_6782916ff3717": {
+                    "key": "layout_6782916ff3717",
+                    "name": "gallery",
+                    "label": "Gallery",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6782916ff3719",
+                            "label": "Gallery",
+                            "name": "gallery",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_67828f27c1ecc"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -265,5 +329,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1736127884
+    "modified": 1736617866
 }
