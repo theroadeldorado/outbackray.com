@@ -50,7 +50,7 @@
               <?php echo ResponsivePics::get_picture($image, 'sm:600 600|f', 'lazyload-effect full-image', true, true); ?>
             </div>
             <div class="p-4 grow w-full text-center">
-              <h3 class="text-[1.25rem]md:text-[1.5rem] font-bold"><?php echo $animal_name; ?></h3>
+              <h3 class="text-[1.25rem] md:text-[1.5rem] font-bold"><?php echo $animal_name; ?></h3>
               <p class="text-[0.875rem] md:text-[1rem] font-medium"><?php echo $species; ?></p>
             </div>
           </div>
