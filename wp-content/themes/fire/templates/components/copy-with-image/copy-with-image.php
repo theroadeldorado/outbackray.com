@@ -80,7 +80,7 @@
 
   <div class="fire-container relative gap-y-10 overflow-hidden md:py-0 <?php echo $full_height_image ? 'pb-20 ':'py-20 ';?>">
     <?php if ($copy) : ?>
-      <div class="md:row-start-1 relative z-[2] content-center wizzy py-0 md:py-20 lg:py-40 font-medium
+      <div class="md:row-start-1 relative z-[2] min-h content-center wizzy py-0 md:py-20 lg:py-40 font-medium
         <?php echo $image_left ? 'col-[main] md:col-[col-8/col-12]':'col-[main] md:col-[col-1/col-5]';?>
       ">
         <?php echo $copy; ?>
@@ -89,7 +89,7 @@
 
 
     <?php if ($image) : ?>
-      <div class="row-start-1 relative
+      <div class="row-start-1 relative lg:min-h-[37.5rem]
         <?php echo $full_height_image && $image_left ? 'col-[full-width] md:col-[full-width/col-7]':'';?>
         <?php echo $full_height_image && !$image_left ? 'col-[full-width] md:col-[col-6/full-width]':'';?>
         <?php echo !$full_height_image && $image_left ? 'col-[main] md:col-[col-2/col-6]':'';?>
