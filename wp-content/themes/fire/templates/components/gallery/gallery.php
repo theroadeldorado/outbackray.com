@@ -7,8 +7,6 @@
   $background_color = get_sub_field('background_colors');
   $text_color = get_text_color($background_color);
 
-
-
   $section->add_classes([
     $background_color,
     $background_texture,
@@ -42,7 +40,7 @@
             };
           ?>
             <div
-              class="grid gap-y-4 md:gap-y-10 lg:gap-y-20 transition-transform duration-100"
+              class="grid gap-y-4 md:gap-y-10 lg:gap-y-20"
               :style="{
                 '--scroll-up': scrollUp,
                 '--scroll-down': scrollDown,
