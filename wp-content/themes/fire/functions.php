@@ -367,3 +367,15 @@ function get_youtube_id($url) {
     $result = preg_match($pattern, $url, $matches);
     return ($result) ? $matches[1] : false;
 }
+
+add_action('init', function() {
+    // Unregister the post type before admin menu loads
+    unregister_post_type('post');
+}, 0); // Priority 0 to run early
+
+add_action('admin_menu', function() {
+    // Only try to remove menu if post type still exists
+    if (post_type_exists('post')) {
+        remove_menu_page('edit.php');
+    }
+});
