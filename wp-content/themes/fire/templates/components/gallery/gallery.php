@@ -56,7 +56,7 @@
                   style="transform: rotate(<?php echo $rotate_image; ?>deg)"
                   @click="showImage('<?php echo wp_get_attachment_image_url($image['id'], 'full'); ?>')"
                 >
-                  <?php echo ResponsivePics::get_picture($image['id'], 'sm:600|f, md:500|f, lg:600|f, xl:700|f, xxl:1000|f', 'lazyload-effect full-image', true, false); ?>
+                  <?php echo ResponsivePics::get_picture($image['id'], 'sm:600|f, md:500|f, lg:600|f, xl:700|f, xxl:1000|f', 'lazyload-effect full-image', false, false); ?>
                 </div>
               <?php endforeach; ?>
             </div>
