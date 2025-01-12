@@ -87,7 +87,7 @@
                    data-url="<?php echo wp_get_attachment_image_url($image, 'full'); ?>"
                    data-slide="<?php echo $media_index; ?>"
                    x-show="isOpen && activeAnimal === <?php echo $animal_index; ?> && currentSlide === <?php echo $media_index; ?>">
-                <?php echo ResponsivePics::get_picture($image, 'sm:400 800|f, md:1920 1080|f', 'max-h-[90vh] max-w-[90vw] object-contain', false, false); ?>
+                <?php echo ResponsivePics::get_picture($image, 'sm:600, md:900, lg:1920', 'max-h-[90vh] max-w-[90vw] object-contain', false, false); ?>
               </div>
               <?php $media_index++; ?>
             <?php endforeach; ?>
