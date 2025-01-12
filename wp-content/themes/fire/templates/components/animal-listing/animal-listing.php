@@ -132,12 +132,14 @@
                 <button @click="closeGallery()" class="text-white shrink-0 font-bold flex items-center justify-center size-8 p-2 bg-emerald-900 hover:bg-emerald-800 ease-in-out duration-300 transition-all hover:scale-105 rounded-full rotate-90">
                   <?php new Fire_SVG('icon--close'); ?>
                 </button>
-                <button @click="prevImage(activeAnimal)" class="text-white font-bold flex items-center justify-center size-8 p-2 bg-emerald-900 hover:bg-emerald-800 ease-in-out duration-300 transition-all hover:scale-105 rounded-full rotate-90">
-                  <?php new Fire_SVG('icon--chevron-down'); ?>
-                </button>
-                <button @click="nextImage(activeAnimal)" class="text-white font-bold flex items-center justify-center size-8 p-2 bg-emerald-900 hover:bg-emerald-800 ease-in-out duration-300 transition-all hover:scale-105 rounded-full -rotate-90">
-                  <?php new Fire_SVG('icon--chevron-down'); ?>
-                </button>
+                <?php if(($gallery && count($gallery) > 1) || ($videos && count($videos) > 1) || (($gallery ? count($gallery) : 0) + ($videos ? count($videos) : 0)) > 1): ?>
+                  <button @click="prevImage(activeAnimal)" class="text-white font-bold flex items-center justify-center size-8 p-2 bg-emerald-900 hover:bg-emerald-800 ease-in-out duration-300 transition-all hover:scale-105 rounded-full rotate-90">
+                    <?php new Fire_SVG('icon--chevron-down'); ?>
+                  </button>
+                  <button @click="nextImage(activeAnimal)" class="text-white font-bold flex items-center justify-center size-8 p-2 bg-emerald-900 hover:bg-emerald-800 ease-in-out duration-300 transition-all hover:scale-105 rounded-full -rotate-90">
+                    <?php new Fire_SVG('icon--chevron-down'); ?>
+                  </button>
+                <?php endif; ?>
               </div>
             </div>
           </div>

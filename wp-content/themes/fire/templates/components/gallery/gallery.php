@@ -26,7 +26,7 @@
 
     <?php if ($gallery) : ?>
       <div class="md:row-start-1 relative col-[full-width] md:col-[col-5/full-width]">
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-x-4 md:gap-x-8 py-20 px-8">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-x-4 md:gap-x-8 mb-20 md:py-20 px-8">
           <?php
           // Split gallery into columns
           $num_columns = wp_is_mobile() ? 2 : 3;
@@ -36,7 +36,7 @@
             $translateY = match($column_index) {
               1 => 'translate-y-[var(--scroll-down)]',
               2 => 'translate-y-[var(--scroll-up-slow)]',
-              default => 'translate-y-[var(--scroll-up)] mt-20'
+              default => 'translate-y-[var(--scroll-up)] lg:mt-20'
             };
           ?>
             <div

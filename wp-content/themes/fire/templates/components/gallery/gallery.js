@@ -9,8 +9,9 @@ export default () => ({
   init() {
     this.$watch('scroll', (value) => {
       const isMobile = window.innerWidth < 768;
-      const multiplier = isMobile ? 0.05 : 0.1;
-      const slowMultiplier = isMobile ? 0.0125 : 0.025;
+      if (isMobile) return;
+      const multiplier = 0.1;
+      const slowMultiplier = 0.025;
 
       this.scrollUp = `${value * -multiplier}px`;
       this.scrollDown = `${value * multiplier}px`;
