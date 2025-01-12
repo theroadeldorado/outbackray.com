@@ -18,6 +18,10 @@
       outline: none;
     }
 
+    &:hover {
+      @apply bg-dark-blue text-white ring-white ring-2;
+    }
+
     &-outline {
       @apply button;
       @apply bg-transparent ring-inset text-current ring-2 ring-current;
