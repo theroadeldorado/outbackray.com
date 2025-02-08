@@ -20,7 +20,8 @@
       <?php if($heading):?>
         <?php new Fire_Heading($tag, $heading, 'heading-3 font-bold text-center mb-5 lg:mb-10');?>
       <?php endif;?>
-      <?php echo do_shortcode( '[trustindex no-registration=google]' ); ?>
+      <!-- trustindex no-registration=google -->
+      <?php echo do_shortcode( '[trustindex data-widget-id="5038aa241d561223bb4600ba7db"]' ); ?>
     </div>
   <?php endif; ?>
 <?php $section->end(); ?>

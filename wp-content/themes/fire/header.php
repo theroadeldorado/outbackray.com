@@ -53,8 +53,8 @@ if (!function_exists('get_field')) {
 
   <header class="site-header fire-container my-4 absolute <?php echo is_admin_bar_showing() ? 'top-[var(--wp-admin--admin-bar--height)]' : 'top-0' ?> left-0 right-0 z-[1000] w-full"
     x-data="{ mobileNavOpen: false }">
-    <div class="flex justify-between items-center">
-      <a class="block w-[200px] lg:w-[300px] xl:w-[400px]" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+    <div class="flex  justify-between items-center">
+      <a class="block w-[250px] lg:w-[350px] xl:w-[500px]" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
         <?php echo ResponsivePics::get_picture(7, 'sm:400, lg:800', '', false, false); ?>
         <span class="sr-only"><?php bloginfo( 'name' ); ?></span>
       </a>
@@ -77,7 +77,7 @@ if (!function_exists('get_field')) {
       </button>
 
       <!-- Desktop Navigation -->
-      <nav id="site-navigation" class="main-navigation hidden lg:block">
+      <nav id="site-navigation" class="main-navigation hidden lg:block shrink-0">
         <?php
           // Get menu items count
           $menu_items = wp_get_nav_menu_items('primary');
@@ -102,7 +102,7 @@ if (!function_exists('get_field')) {
           add_filter('nav_menu_css_class', function($classes, $item) use ($rotations) {
             $index = $item->menu_order - 1;
             $rotation = $rotations[$index];
-            $classes[] = "lg:text-current font-semibold text-[3rem] lg:text-[1.5rem] xl:text-[2rem] no-underline lg:hover:scale-110 transition-all duration-300 ease-bounce lg:hover:rotate-[$rotation"."deg] block";
+            $classes[] = "lg:text-current font-semibold text-[3rem] lg:text-[1.5rem] xl:text-[1.75rem] no-underline lg:hover:scale-110 transition-all duration-300 ease-bounce lg:hover:rotate-[$rotation"."deg] block";
             return $classes;
           }, 10, 2);
 
@@ -110,7 +110,7 @@ if (!function_exists('get_field')) {
             'container' => false,
             'depth' => 1,
             'theme_location' => 'primary',
-            'menu_class' => 'flex gap-[1.5rem] xl:gap-[3.5rem]',
+            'menu_class' => 'flex gap-[1rem] xl:gap-[2.5rem]',
             'item_0' => 'item_class text-white transition-all duration-300 ease-in-out',
             'submenu_0' => 'submenu',
           ]);

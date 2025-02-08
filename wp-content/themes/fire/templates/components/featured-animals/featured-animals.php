@@ -42,25 +42,26 @@
           $gallery = get_field('gallery', $animal_id);
           $image = $gallery[0];
           $rotate_image = rand(0, 1) ? rand(-4, -2) : rand(2, 4);
+          $animal_slug = get_post_field('post_name', $animal_id);
           ?>
 
-          <div
-            class="animal-card w-full bg-texture-croc overflow-hidden flex flex-col rounded-xl lg:rounded-[30px] <?php echo $card_colors[$color_index % count($card_colors)]; ?>">
-            <div class="aspect-[3/2] w-full overflow-hidden rounded-b-xl shrink-0 lg:rounded-b-[30px]">
+          <a href="<?php echo $link_to_all_animals['url']; ?>#<?php echo $animal_slug; ?>"
+          class="animal-card w-full no-underline bg-texture-croc overflow-hidden flex flex-col rounded-xl lg:rounded-[30px] hover:scale-105 transition-all hover:rotate-[<?php echo $rotate_image; ?>deg] duration-300 ease-bounce <?php echo $card_colors[$color_index % count($card_colors)]; ?>">
+            <div class="aspect-[3/2] relative z-[1] pointer-events-none w-full overflow-hidden rounded-b-xl shrink-0 lg:rounded-b-[30px]">
               <?php echo ResponsivePics::get_picture($image, 'sm:600 600|f', 'lazyload-effect full-image', true, true); ?>
             </div>
-            <div class="p-4 grow w-full text-center">
+            <div class="p-4 grow w-full relative z-[1] pointer-events-none text-center">
               <h3 class="text-[1.25rem] md:text-[1.5rem] font-bold"><?php echo $animal_name; ?></h3>
               <p class="text-[0.875rem] md:text-[1rem] font-medium"><?php echo $species; ?></p>
             </div>
-          </div>
+          </a>
         <?php $index++; $color_index++; endforeach; ?>
       </div>
     <?php endif; ?>
 
     <?php if ($link_to_all_animals) : ?>
       <div class="text-center mt-10 lg:mt-20 mb-10">
-        <a href="<?php echo $link_to_all_animals['url']; ?>" target="<?php echo $link_to_all_animals['target']; ?>" class="button"><?php echo $link_to_all_animals['title']; ?></a>
+        <a href="<?php echo $link_to_all_animals['url']; ?>" target="<?php echo $link_to_all_animals['target']; ?>" class="button-outline"><?php echo $link_to_all_animals['title']; ?></a>
       </div>
     <?php endif; ?>
   </div>

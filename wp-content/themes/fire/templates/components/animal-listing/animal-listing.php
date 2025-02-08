@@ -2,7 +2,7 @@
   $background_texture = get_sub_field('background_texture');
   $background_color = get_sub_field('background_colors');
   $text_color = get_text_color($background_color);
-  $card_colors = ['bg-green', 'bg-orange', 'bg-tan', 'bg-navy', 'bg-purple'];
+  $card_colors = ['bg-green', 'bg-orange', 'bg-tan', 'bg-purple', 'bg-navy'];
 
   $index = 0;
   $color_index = 0;
@@ -46,9 +46,13 @@
           $image = $gallery[0];
           $videos = get_field('videos');
           $rotate_image = rand(0, 1) ? rand(-5, -2) : rand(2, 5);
+          $animal_id = get_the_ID();
+          $animal_slug = get_post_field('post_name', $animal_id);
           ?>
 
-          <button @click="openGallery(<?php echo $index; ?>)"
+          <button
+            @click="openGallery(<?php echo $animal_id; ?>)"
+            id="<?php echo $animal_slug; ?>"
             class="animal-card w-full bg-texture-croc overflow-hidden flex flex-col rounded-xl lg:rounded-[30px] hover:scale-105 transition-all hover:rotate-[<?php echo $rotate_image; ?>deg] duration-300 ease-bounce <?php echo $card_colors[$color_index % count($card_colors)]; ?>">
             <div class="aspect-[3/2] w-full overflow-hidden rounded-b-xl shrink-0 lg:rounded-b-[30px]">
               <?php echo ResponsivePics::get_picture($image, 'sm:600 600|f', 'lazyload-effect full-image', true, true); ?>
@@ -74,6 +78,7 @@
           $species = get_field('species');
           $gallery = get_field('gallery');
           $videos = get_field('videos');
+          $animal_id = get_the_ID();
 
           // Combine images and videos into a single media array
           $media_index = 0;
@@ -82,11 +87,11 @@
           <?php if($gallery): ?>
             <?php foreach($gallery as $image): ?>
               <div class="flex items-center justify-center"
-                   data-animal="<?php echo $animal_index; ?>"
+                   data-animal="<?php echo $animal_id; ?>"
                    data-media-type="image"
                    data-url="<?php echo wp_get_attachment_image_url($image, 'full'); ?>"
                    data-slide="<?php echo $media_index; ?>"
-                   x-show="isOpen && activeAnimal === <?php echo $animal_index; ?> && currentSlide === <?php echo $media_index; ?>">
+                   x-show="isOpen && activeAnimal === <?php echo $animal_id; ?> && currentSlide === <?php echo $media_index; ?>">
                 <?php echo ResponsivePics::get_picture($image, 'sm:600, md:900, lg:1920', 'max-h-[90vh] max-w-[90vw] object-contain', false, false); ?>
               </div>
               <?php $media_index++; ?>
@@ -102,10 +107,10 @@
                 $iframe = preg_replace('/height="(\d+)"/', 'height="720"', $iframe);
                 ?>
                 <div class="flex items-center justify-center"
-                     data-animal="<?php echo $animal_index; ?>"
+                     data-animal="<?php echo $animal_id; ?>"
                      data-media-type="video"
                      data-slide="<?php echo $media_index; ?>"
-                     x-show="isOpen && activeAnimal === <?php echo $animal_index; ?> && currentSlide === <?php echo $media_index; ?>">
+                     x-show="isOpen && activeAnimal === <?php echo $animal_id; ?> && currentSlide === <?php echo $media_index; ?>">
                   <div class="aspect-video w-full max-w-[90vw]">
                     <?php echo $iframe; ?>
                   </div>
@@ -116,7 +121,7 @@
             endforeach; ?>
           <?php endif; ?>
 
-          <div x-show="activeAnimal === <?php echo $animal_index; ?>"
+          <div x-show="activeAnimal === <?php echo $animal_id; ?>"
                class="fixed bottom-4 left-4 rounded-lg bg-green bg-texture-leaves max-w-[500px] pl-8 pr-4 pt-4 pb-4">
             <h2 class="text-white heading-6 font-bold mb-3 pr-4"><?php echo $animal_name; ?></h2>
             <div class="flex justify-between gap-4">

@@ -113,6 +113,38 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_67a7babd7fbe8": {
+                    "key": "layout_67a7babd7fbe8",
+                    "name": "faqs",
+                    "label": "FAQs",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_67a7babd7fbea",
+                            "label": "FAQs",
+                            "name": "faqs",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_67a7ba70d2631"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_6782af7899c60": {
                     "key": "layout_6782af7899c60",
                     "name": "featured_animals",
@@ -329,5 +361,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1736617866
+    "modified": 1739045593
 }

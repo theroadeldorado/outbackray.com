@@ -15,7 +15,7 @@
 ?>
 
 <?php $section->start(); ?>
-  <div class="fire-container relative gap-y-10 overflow-clip md:py-0" x-data="gallery" @scroll.window="handleScroll">
+  <div class="fire-container relative gap-y-10 overflow-clip md:py-0" x-data="gallery">
     <?php if ($copy) : ?>
       <div class="md:row-start-1 relative z-[2] col-[main] md:col-[col-1/col-4]">
         <div class=" wizzy pt-20 md:py-20 sticky top-20 lg:mb-20 font-medium">
@@ -32,28 +32,11 @@
           $num_columns = wp_is_mobile() ? 2 : 3;
           $columns = array_chunk($gallery, ceil(count($gallery) / $num_columns));
 
-          foreach ($columns as $column_index => $column_images) :
-            $translateY = match($column_index) {
-              1 => 'translate-y-[var(--scroll-down)]',
-              2 => 'translate-y-[var(--scroll-up-slow)]',
-              default => 'translate-y-[var(--scroll-up)] lg:mt-20'
-            };
-          ?>
-            <div
-              class="grid gap-y-4 md:gap-y-10 lg:gap-y-20"
-              :style="{
-                '--scroll-up': scrollUp,
-                '--scroll-down': scrollDown,
-                '--scroll-up-slow': scrollUpSlow,
-              }"
-              x-bind:class="'<?php echo $translateY; ?>'"
-            >
-              <?php foreach ($column_images as $image) :
-                $rotate_image = rand(0, 1) ? rand(-5, -2) : rand(2, 5);
-              ?>
+          foreach ($columns as $column_index => $column_images) :?>
+            <div class="grid gap-4 md:gap-8">
+              <?php foreach ($column_images as $image) :?>
                 <div
                   class="rounded-lg md:rounded-xl lg:rounded-[30px] overflow-hidden cursor-pointer"
-                  style="transform: rotate(<?php echo $rotate_image; ?>deg)"
                   @click="showImage('<?php echo wp_get_attachment_image_url($image['id'], 'full'); ?>')"
                 >
                   <?php echo ResponsivePics::get_picture($image['id'], 'sm:600|f, md:500|f, lg:600|f, xl:700|f, xxl:1000|f', 'lazyload-effect full-image', false, false); ?>
