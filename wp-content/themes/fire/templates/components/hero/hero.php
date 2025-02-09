@@ -43,7 +43,7 @@
     <?php endif; ?>
 
     <?php if($show_ray):?>
-      <div class="hidden lg:flex -translate-x-10 col-[main] md:col-[full-width/col-2] xl:col-[full-width/col-3] row-start-1 h-full relative items-end  <?php echo $full_screen ? 'pt-24 ' : 'mt-20 items-start'; ?>">
+      <div class="hidden lg:flex -translate-x-10 col-[main] md:col-[full-width/col-2] xl:col-[full-width/col-3] row-start-1 h-full relative items-end z-[2] <?php echo $full_screen ? 'pt-24 ' : 'mt-20 items-start'; ?>">
         <?php echo ResponsivePics::get_picture(72, 'sm:550', 'lazyload-effect', false, false); ?>
       </div>
     <?php endif; ?>
