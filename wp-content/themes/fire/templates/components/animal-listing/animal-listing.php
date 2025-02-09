@@ -39,7 +39,8 @@
         <?php while ($animals_query->have_posts()) : $animals_query->the_post();
           $animal_name = get_the_title();
           $birth_date = get_field('birth_date');
-          $age = $birth_date ? date_diff(date_create($birth_date), date_create('now'))->y : '';
+          $birth_date_formatted = DateTime::createFromFormat('d/m/Y', $birth_date);
+          $age = $birth_date ? ($birth_date_formatted ? date_diff($birth_date_formatted, date_create('now'))->y : null) : null;
           $species = get_field('species');
           $bio = get_field('bio');
           $gallery = get_field('gallery');
@@ -74,7 +75,8 @@
         <?php while ($animals_query->have_posts()) : $animals_query->the_post();
           $animal_name = get_the_title();
           $birth_date = get_field('birth_date');
-          $age = $birth_date ? date_diff(date_create($birth_date), date_create('now'))->y : '';
+          $birth_date_formatted = DateTime::createFromFormat('d/m/Y', $birth_date);
+          $age = $birth_date ? ($birth_date_formatted ? date_diff($birth_date_formatted, date_create('now'))->y : null) : null;
           $species = get_field('species');
           $gallery = get_field('gallery');
           $videos = get_field('videos');
@@ -126,11 +128,11 @@
             <h2 class="text-white heading-6 font-bold mb-3 pr-4"><?php echo $animal_name; ?></h2>
             <div class="flex justify-between gap-4">
               <div>
-                <?php if($age): ?>
-                  <p class="text-white font-bold mb-3"><?php echo $age; ?> years old</p>
-                <?php endif; ?>
                 <?php if($species): ?>
                   <p class="text-white font-bold"><?php echo $species; ?></p>
+                <?php endif; ?>
+                <?php if($age): ?>
+                  <p class="text-white font-bold mb-3"><?php echo $age; ?> years old</p>
                 <?php endif; ?>
               </div>
               <div class="flex justify-end self-end gap-3 shrink-0">

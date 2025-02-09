@@ -43,27 +43,6 @@
             "append": ""
         },
         {
-            "key": "field_67794af28b97b",
-            "label": "Bio",
-            "name": "bio",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "rows": 4,
-            "placeholder": "",
-            "new_lines": ""
-        },
-        {
             "key": "field_67794b038b97c",
             "label": "Gallery",
             "name": "gallery",
@@ -153,5 +132,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1736002442
+    "modified": 1739133883
 }

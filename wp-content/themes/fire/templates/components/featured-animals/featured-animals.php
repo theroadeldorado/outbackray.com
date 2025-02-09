@@ -36,8 +36,9 @@
         <?php foreach ($featured_animals as $animal) :
           $animal_id = $animal;
           $animal_name = get_the_title($animal_id);
-          $birth_date = get_field('birth_date', $animal_id);
-          $age = $birth_date ? date_diff(date_create($birth_date), date_create('now'))->y : '';
+          $birth_date = get_field('birth_date');
+          $birth_date_formatted = DateTime::createFromFormat('d/m/Y', $birth_date);
+          $age = $birth_date ? ($birth_date_formatted ? date_diff($birth_date_formatted, date_create('now'))->y : null) : null;
           $species = get_field('species', $animal_id);
           $gallery = get_field('gallery', $animal_id);
           $image = $gallery[0];

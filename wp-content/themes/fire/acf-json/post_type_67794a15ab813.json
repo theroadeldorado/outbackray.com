@@ -51,7 +51,7 @@
     "show_in_menu": true,
     "admin_menu_parent": "",
     "show_in_admin_bar": true,
-    "show_in_nav_menus": true,
+    "show_in_nav_menus": false,
     "show_in_rest": true,
     "rest_base": "",
     "rest_namespace": "wp\/v2",
@@ -71,10 +71,7 @@
     "has_archive": false,
     "has_archive_slug": "",
     "rewrite": {
-        "permalink_rewrite": "post_type_key",
-        "with_front": "1",
-        "feeds": "0",
-        "pages": "0"
+        "permalink_rewrite": "no_permalink"
     },
     "query_var": "post_type_key",
     "query_var_name": "",
@@ -82,5 +79,5 @@
     "delete_with_user": false,
     "register_meta_box_cb": "",
     "enter_title_here": "",
-    "modified": 1736004020
+    "modified": 1739133588
 }
