@@ -379,3 +379,12 @@ add_action('admin_menu', function() {
         remove_menu_page('edit.php');
     }
 });
+
+
+add_action('admin_init', function() {
+    // Get the editor role
+    $editor = get_role('editor');
+
+    // Add Gravity Forms capabilities to editor role
+    $editor->add_cap('gform_full_access');
+});
