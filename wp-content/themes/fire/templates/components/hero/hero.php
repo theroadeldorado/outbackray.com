@@ -26,11 +26,11 @@
             :class="currentSlide !== <?php echo $index; ?> ? 'opacity-0' : 'opacity-100'"
             class="absolute inset-0 pointer-events-none transition-opacity duration-500 ease-in-out"
             data-slide="<?php echo $index; ?>">
-            <?php echo ResponsivePics::get_picture($image['id'], 'sm:600 800|f, md:900 506|f, lg:1200 675|f, xl:1920 1080|f', 'lazyload-effect full-image', false, false); ?>
+            <?php echo ResponsivePics::get_picture($image['id'], 'sm:600 800|f, md:900 506|f, lg:1200 675|f, xl:1920 1080|f xxl:2560 1440|f', 'lazyload-effect full-image', false, false); ?>
           </div>
         <?php endforeach; ?>
       <?php elseif($images): ?>
-        <?php echo ResponsivePics::get_picture($images['id'], 'sm:600 800|f, md:900 506|f, lg:1200 675|f, xl:1920 1080|f', 'lazyload-effect full-image', false, false); ?>
+        <?php echo ResponsivePics::get_picture($images['id'], 'sm:600 800|f, md:900 506|f, lg:1200 675|f, xl:1920 1080|f xxl:2560 1440|f', 'lazyload-effect full-image', false, false); ?>
       <?php endif; ?>
     </div>
 

@@ -98,7 +98,7 @@
           <div class="absolute top-0 w-full bottom-0 <?php echo $image_left ? 'left-0':'right-0';?>">
             <div aria-hidden class="absolute hidden md:block -translate-y-1/2 <?php echo $image_left ? 'left-0':'right-0';?>" style="<?php echo $shape_style; ?>"></div>
 
-            <?php echo ResponsivePics::get_picture($image, 'sm:600 400|f, md:500 500|f, lg:600 600|f, xl:950 950|f, xxl:1200 1200|f', 'lazyload-effect full-image scale-[1.01]', false, false); ?>
+            <?php echo ResponsivePics::get_picture($image, 'sm:600 400|f, md:500 500|f, lg:800 800|f, xl:1200 1200|f', 'lazyload-effect full-image scale-[1.01]', false, false); ?>
           </div>
         <?php else : ?>
           <div class="relative my-0 md:my-20 lg:my-40 overflow-clip rounded-[30px] drop-shadow-[-12px_-11px_0px_var(--shadow-color)] lg:drop-shadow-[-24px_-23px_0px_var(--shadow-color)]" style="--shadow-color: <?php echo $shadow_color; ?>; transform: rotate(<?php echo $rotate_image; ?>deg);">
