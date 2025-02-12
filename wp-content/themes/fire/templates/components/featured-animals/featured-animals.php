@@ -37,7 +37,7 @@
           $animal_id = $animal;
           $animal_name = get_the_title($animal_id);
           $birth_date = get_field('birth_date');
-          $birth_date_formatted = DateTime::createFromFormat('d/m/Y', $birth_date);
+          $birth_date_formatted = $birth_date ? DateTime::createFromFormat('d/m/Y', $birth_date) : null;
           $age = $birth_date ? ($birth_date_formatted ? date_diff($birth_date_formatted, date_create('now'))->y : null) : null;
           $species = get_field('species', $animal_id);
           $gallery = get_field('gallery', $animal_id);
