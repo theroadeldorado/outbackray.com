@@ -52,7 +52,7 @@
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "33",
+                "width": "25",
                 "class": "",
                 "id": ""
             },
@@ -69,16 +69,37 @@
             "preview_size": "thumbnail"
         },
         {
-            "key": "field_6774158c2bcc8",
-            "label": "Full height Image",
-            "name": "full_height_image",
+            "key": "field_6774160d31d7a",
+            "label": "Image Position",
+            "name": "image_position",
             "aria-label": "",
             "type": "true_false",
-            "instructions": "If not full height image will be wrapped in a border and rotated slighly.",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "33",
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "allow_in_bindings": 0,
+            "ui_on_text": "Left",
+            "ui_off_text": "Right",
+            "ui": 1
+        },
+        {
+            "key": "field_67b0bff4e7af0",
+            "label": "Auto crop image",
+            "name": "auto_crop_image",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
                 "class": "",
                 "id": ""
             },
@@ -90,24 +111,32 @@
             "ui": 1
         },
         {
-            "key": "field_6774160d31d7a",
-            "label": "Image Position",
-            "name": "image_position",
+            "key": "field_6774158c2bcc8",
+            "label": "Alternate Style",
+            "name": "full_height_image",
             "aria-label": "",
             "type": "true_false",
-            "instructions": "",
+            "instructions": "Alternative Style for copy with media.",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_67b0bff4e7af0",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
-                "width": "34",
+                "width": "25",
                 "class": "",
                 "id": ""
             },
             "message": "",
             "default_value": 1,
             "allow_in_bindings": 0,
-            "ui_on_text": "Left",
-            "ui_off_text": "Right",
+            "ui_on_text": "",
+            "ui_off_text": "",
             "ui": 1
         },
         {
@@ -189,5 +218,5 @@
     "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1735678508
+    "modified": 1739637051
 }

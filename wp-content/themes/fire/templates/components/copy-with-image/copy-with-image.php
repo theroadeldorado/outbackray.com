@@ -3,6 +3,7 @@
   $full_height_image = get_sub_field('full_height_image');
   $image_left = get_sub_field('image_position');
   $copy = get_sub_field('copy');
+  $auto_crop_image = get_sub_field('auto_crop_image');
 
   $background_texture = get_sub_field('background_texture');
   $background_color = get_sub_field('background_colors');
@@ -10,6 +11,8 @@
   $secondary_color = get_secondary_color($background_color);
   $shadow_color = get_shadow_color($background_color);
   $rotate_image = rand(0, 1) ? rand(-5, -2) : rand(2, 5);
+
+  $crops = $auto_crop_image ? 'sm:400 400|f, lg:500 500|f, xl:600 600|f' : 'sm:600, md:500, lg:800';
 
   $points = [];
 
@@ -102,7 +105,7 @@
           </div>
         <?php else : ?>
           <div class="relative my-0 md:my-20 lg:my-40 overflow-clip rounded-[30px] drop-shadow-[-12px_-11px_0px_var(--shadow-color)] lg:drop-shadow-[-24px_-23px_0px_var(--shadow-color)]" style="--shadow-color: <?php echo $shadow_color; ?>; transform: rotate(<?php echo $rotate_image; ?>deg);">
-            <?php echo ResponsivePics::get_picture($image, 'sm:400 400|f, lg:500 500|f, xl:600 600|f', 'lazyload-effect full-image', false, false); ?>
+            <?php echo ResponsivePics::get_picture($image, $crops, 'lazyload-effect full-image', false, false); ?>
           </div>
         <?php endif; ?>
       </div>
