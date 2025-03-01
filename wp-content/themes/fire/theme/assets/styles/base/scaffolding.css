@@ -128,4 +128,8 @@
       background-size: 800px;
     }
   }
+
+  .text-shadow-heros {
+    text-shadow: 0 0 16px rgb(0 0 0 / 85%), 0 0 1px rgb(0 0 0 / 85%);
+  }
 }

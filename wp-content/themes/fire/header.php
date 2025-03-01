@@ -54,7 +54,7 @@ if (!function_exists('get_field')) {
   <header class="site-header fire-container my-4 absolute <?php echo is_admin_bar_showing() ? 'top-[var(--wp-admin--admin-bar--height)]' : 'top-0' ?> left-0 right-0 z-[1000] w-full"
     x-data="{ mobileNavOpen: false }">
     <div class="flex  justify-between items-center">
-      <a class="block w-[180px] lg:w-[300px] xl:w-[400px]" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+      <a class="block w-[180px] lg:w-[300px] xl:w-[450px]" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
         <?php echo ResponsivePics::get_picture(7, 'sm:400, lg:800', '', false, false); ?>
         <span class="sr-only"><?php bloginfo( 'name' ); ?></span>
       </a>
@@ -110,7 +110,7 @@ if (!function_exists('get_field')) {
             'container' => false,
             'depth' => 1,
             'theme_location' => 'primary',
-            'menu_class' => 'flex gap-[1rem] xl:gap-[2.5rem]',
+            'menu_class' => 'flex gap-[1rem] lg:gap-[1rem] xl:gap-[2.5rem]',
             'item_0' => 'item_class text-white transition-all duration-300 ease-in-out',
             'submenu_0' => 'submenu',
           ]);
@@ -134,7 +134,7 @@ if (!function_exists('get_field')) {
               'theme_location' => 'primary',
               'menu_class' => 'flex flex-col items-center gap-8',
               'item_0' => 'item_class',
-              'link_0' => 'font-semibold text-[2rem] text-white no-underline hover:text-gray-300 transition-colors duration-300',
+              'link_0' => 'font-semibold text-[2.5rem] lg:text-[2rem] xl:text-[2.5rem] text-white no-underline hover:text-gray-300 transition-colors duration-300',
               'submenu_0' => 'submenu',
             ]);
           ?>

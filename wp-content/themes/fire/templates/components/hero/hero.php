@@ -14,7 +14,7 @@
 
   <div class="fire-container relative overflow-hidden <?php echo $full_screen ? 'min-h-screen' : 'min-h-[350px] lg:min-h-[550px] xl:min-h-[650px]'; ?>" x-data="heroSlideshow">
     <div class="full-width absolute inset-0">
-      <div class="absolute w-full h-full bg-gradient-to-b from-black/70 via-black/40 to-black/75 z-[1] inset-0" aria-hidden></div>
+      <!-- <div class="absolute w-full h-full bg-gradient-to-b from-black/70 via-black/40 to-black/75 z-[1] inset-0" aria-hidden></div> -->
       <?php if($video): ?>
         <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover" <?php echo ($images && is_array($images)) ? 'poster="' . wp_get_attachment_image_url($images[0]['id'], 'full') . '"' : ''; ?>>
           <source src="<?php echo $video['url']; ?>" type="<?php echo $video['mime_type']; ?>">
@@ -35,8 +35,8 @@
     </div>
 
     <?php if($copy):?>
-      <div class="col-[main] row-start-1 relative flex  z-[2] h-full <?php echo $show_ray ? 'md:col-[col-3/col-12] xl:col-[col-4/col-12]' : '';?> <?php echo $full_screen ? 'items-end' :'items-center' ;?>">
-        <div class="wizzy text-white <?php echo $full_screen ? 'pt-48 pb-24' : 'pt-32 pb-16 lg:pt-48 lg:pb-20 xl:pt-52'; ?>">
+      <div class="col-[main] row-start-1 relative flex z-[2] h-full <?php echo $show_ray ? 'md:col-[col-3/col-12] xl:col-[col-4/col-12]' : '';?> <?php echo $full_screen ? 'items-end' :'items-center' ;?>">
+        <div class="wizzy text-white text-shadow-heros <?php echo $full_screen ? 'pt-48 pb-24' : 'text-center w-full pt-32 pb-16 lg:pt-48 lg:pb-20 xl:pt-52'; ?>">
           <?php echo $copy; ?>
         </div>
       </div>
