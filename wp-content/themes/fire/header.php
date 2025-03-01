@@ -54,7 +54,7 @@ if (!function_exists('get_field')) {
   <header class="site-header fire-container my-4 absolute <?php echo is_admin_bar_showing() ? 'top-[var(--wp-admin--admin-bar--height)]' : 'top-0' ?> left-0 right-0 z-[1000] w-full"
     x-data="{ mobileNavOpen: false }">
     <div class="flex  justify-between items-center">
-      <a class="block w-[250px] lg:w-[350px] xl:w-[500px]" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+      <a class="block w-[180px] lg:w-[300px] xl:w-[400px]" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
         <?php echo ResponsivePics::get_picture(7, 'sm:400, lg:800', '', false, false); ?>
         <span class="sr-only"><?php bloginfo( 'name' ); ?></span>
       </a>

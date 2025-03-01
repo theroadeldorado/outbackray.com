@@ -12,7 +12,7 @@
 
 <?php $section->start(); ?>
 
-  <div class="fire-container relative overflow-hidden <?php echo $full_screen ? 'min-h-screen' : 'min-h-[350px] lg:min-h-[550px]'; ?>" x-data="heroSlideshow">
+  <div class="fire-container relative overflow-hidden <?php echo $full_screen ? 'min-h-screen' : 'min-h-[350px] lg:min-h-[550px] xl:min-h-[650px]'; ?>" x-data="heroSlideshow">
     <div class="full-width absolute inset-0">
       <div class="absolute w-full h-full bg-gradient-to-b from-black/70 via-black/40 to-black/75 z-[1] inset-0" aria-hidden></div>
       <?php if($video): ?>
