@@ -23,7 +23,7 @@
     <?php endif; ?>
     <?php if ($form) : ?>
       <div class="col-[main] md:col-[col-7/col-11]">
-        <?php echo do_shortcode('[gravityform id="'.$form.'" title="false" ajax="true"]'); ?>
+        <?php echo do_shortcode('[gravityform id="'.$form.'" title="false" description="false" ajax="true"]'); ?>
       </div>
     <?php endif; ?>
   </div>

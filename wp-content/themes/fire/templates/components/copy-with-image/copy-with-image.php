@@ -99,7 +99,7 @@
       ">
         <?php if ($full_height_image) : ?>
           <div class="absolute top-0 w-full bottom-0 <?php echo $image_left ? 'left-0':'right-0';?>">
-            <div aria-hidden class="absolute hidden md:block -translate-y-1/2 <?php echo $image_left ? 'left-0':'right-0';?>" style="<?php echo $shape_style; ?>"></div>
+            <!-- <div aria-hidden class="absolute hidden md:block -translate-y-1/2 <?php echo $image_left ? 'left-0':'right-0';?>" style="<?php echo $shape_style; ?>"></div> -->
 
             <?php echo ResponsivePics::get_picture($image, 'sm:600 400|f, md:500 500|f, lg:800 800|f, xl:1200 1200|f', 'lazyload-effect full-image scale-[1.01]', false, false); ?>
           </div>

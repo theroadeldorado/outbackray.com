@@ -21,11 +21,18 @@ $section->add_classes([
         <?php while( have_rows('faqs') ) : the_row();
           $question = get_sub_field('question');
           $answer = get_sub_field('answer');
+          $index = get_row_index();
           ?>
-          <div x-data="{ open: false }" class="mb-4 p-4 border border-white/50 rounded-lg <?php echo $background_color;?>">
+          <div
+            x-data="{
+              open: window.location.hash === '#faq-<?php echo $index; ?>'
+            }"
+            class="mb-4 p-4 border border-white/50 rounded-lg <?php echo $background_color;?>"
+          >
             <button
               @click="open = !open"
-              class="w-full text-left font-bold heading-6 py-3 flex justify-between items-center"
+              class="w-full text-left font-bold heading-6 py-3 flex justify-between items-center scroll-mt-10"
+              id="faq-<?php echo $index; ?>"
             >
               <span><?php echo $question; ?></span>
               <svg

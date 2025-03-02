@@ -88,13 +88,17 @@
 
           <?php if($gallery): ?>
             <?php foreach($gallery as $image): ?>
-              <div class="flex items-center justify-center"
-                   data-animal="<?php echo $animal_id; ?>"
-                   data-media-type="image"
-                   data-url="<?php echo wp_get_attachment_image_url($image, 'full'); ?>"
-                   data-slide="<?php echo $media_index; ?>"
-                   x-show="isOpen && activeAnimal === <?php echo $animal_id; ?> && currentSlide === <?php echo $media_index; ?>">
-                <?php echo ResponsivePics::get_picture($image, 'sm:600, md:900, lg:1920', 'max-h-[90vh] max-w-[90vw] object-contain', false, false); ?>
+              <div
+                class="flex items-center justify-center w-[90vw] h-[90vh]"
+                data-animal="<?php echo $animal_id; ?>"
+                data-media-type="image"
+                data-url="<?php echo wp_get_attachment_image_url($image, 'full'); ?>"
+                data-slide="<?php echo $media_index; ?>"
+                x-show="isOpen && activeAnimal === <?php echo $animal_id; ?> && currentSlide === <?php echo $media_index; ?>"
+              >
+                <div class="relative w-full h-full flex items-center justify-center [&>img]:w-auto [&>img]:h-auto [&>img]:max-w-full [&>img]:max-h-full [&>img]:object-contain">
+                  <?php echo ResponsivePics::get_image($image, 'sm-12, md-12, lg-12'); ?>
+                </div>
               </div>
               <?php $media_index++; ?>
             <?php endforeach; ?>
