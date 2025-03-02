@@ -22,7 +22,7 @@
         <?php echo $copy; ?>
         <?php if ($image) : ?>
           <div class="mt-4 lg:block hidden overflow-hidden rounded-xl lg:rounded-[30px]">
-            <?php echo ResponsivePics::get_picture($image, 'sm:600, md:500, lg:800', 'lazyload-effect full-image', false, false); ?>
+            <?php echo ResponsivePics::get_picture($image, 'sm:600', 'lazyload-effect full-image', false, false); ?>
           </div>
         <?php endif; ?>
       </div>
