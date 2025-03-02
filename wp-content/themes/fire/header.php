@@ -110,7 +110,7 @@ if (!function_exists('get_field')) {
             'container' => false,
             'depth' => 1,
             'theme_location' => 'primary',
-            'menu_class' => 'flex gap-[1rem] lg:gap-[1rem] xl:gap-[2.5rem]',
+            'menu_class' => 'flex gap-[1rem] lg:gap-[1rem] xl:gap-[1.5rem]',
             'item_0' => 'item_class text-white transition-all duration-300 ease-in-out',
             'submenu_0' => 'submenu',
           ]);
