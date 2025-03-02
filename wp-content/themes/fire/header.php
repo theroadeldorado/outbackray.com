@@ -132,9 +132,9 @@ if (!function_exists('get_field')) {
               'container' => false,
               'depth' => 1,
               'theme_location' => 'primary',
-              'menu_class' => 'flex flex-col items-center gap-8',
+              'menu_class' => 'flex flex-col items-center gap-2',
               'item_0' => 'item_class',
-              'link_0' => 'font-semibold text-[2.5rem] lg:text-[2rem] xl:text-[2.5rem] text-white no-underline hover:text-gray-300 transition-colors duration-300',
+              'link_0' => 'font-semibold text-[2rem] lg:text-[2rem] xl:text-[2.5rem] text-white no-underline hover:text-gray-300 transition-colors duration-300',
               'submenu_0' => 'submenu',
             ]);
           ?>

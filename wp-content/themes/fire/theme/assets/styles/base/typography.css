@@ -15,19 +15,19 @@
   }
 
   .heading-1 {
-    @apply text-[3.5rem]/[1.2] lg:text-[4.5rem]/[1.2] xl:text-[5.5rem]/[1.2] font-bold;
+    @apply text-[2.5rem]/[1.2] lg:text-[4.5rem]/[1.2] xl:text-[5.5rem]/[1.2] font-bold;
   }
 
   .heading-2 {
-    @apply text-[3rem]/[1.2] lg:text-[3.5rem]/[1.2] xl:text-[4rem]/[1.2] font-bold;
+    @apply text-[2.25rem]/[1.2] lg:text-[3.5rem]/[1.2] xl:text-[4rem]/[1.2] font-bold;
   }
 
   .heading-3 {
-    @apply text-[2.5rem]/[1.2] lg:text-[3rem]/[1.2] xl:text-[3.75rem]/[1.2];
+    @apply text-[2rem]/[1.2] lg:text-[3rem]/[1.2] xl:text-[3.75rem]/[1.2];
   }
 
   .heading-4 {
-    @apply text-[2rem]/[1.2] lg:text-[2.5rem]/[1.2] xl:text-[3rem]/[1.2];
+    @apply text-[1.75rem]/[1.2] lg:text-[2.5rem]/[1.2] xl:text-[3rem]/[1.2];
   }
 
   .heading-5 {
