@@ -9,7 +9,7 @@ export default () => ({
   startSlideshow() {
     this.interval = setInterval(() => {
       this.nextSlide();
-    }, 5000);
+    }, 3000);
   },
 
   nextSlide() {
