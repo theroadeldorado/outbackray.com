@@ -123,6 +123,7 @@ if (!function_exists('get_field')) {
 
       <!-- Mobile Navigation Overlay -->
       <div
+        x-cloak
         class="fixed inset-0 bg-purple bg-texture-leaves z-40 lg:hidden transition-opacity duration-500"
         :class="{'opacity-100 pointer-events-auto': mobileNavOpen, 'opacity-0 pointer-events-none': !mobileNavOpen}"
         @click.self="mobileNavOpen = false">

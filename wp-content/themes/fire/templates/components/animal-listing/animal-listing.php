@@ -71,6 +71,7 @@
            x-show="isOpen"
            x-trap.noscroll.noautofocus="isOpen"
            x-transition
+            x-cloak
            class="fixed w-screen h-screen inset-0 z-[1001] flex items-center justify-center bg-black/80">
         <?php while ($animals_query->have_posts()) : $animals_query->the_post();
           $animal_name = get_the_title();
