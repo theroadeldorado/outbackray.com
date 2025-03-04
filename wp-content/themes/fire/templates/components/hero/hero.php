@@ -5,7 +5,7 @@
   $show_ray = get_sub_field('show_ray');
   $video = get_sub_field('video');
 
-  $crops = $full_screen ? 'sm:600 800|f, md:900 506|f, lg:1200 675|f, xl:1920 1080|f, xxl:2560 1440|f' : 'sm:900 506|f, lg:1200 675|f, xl:1920 1080|f, xxl:2560 1440|f';
+  $crops = $full_screen ? 'sm:600 600|f, md:900 506|f, lg:1200 675|f, xl:1920 1080|f, xxl:2560 1440|f' : 'sm:900 506|f, lg:1200 675|f, xl:1920 1080|f, xxl:2560 1440|f';
 
   $section->add_classes([
     ''
