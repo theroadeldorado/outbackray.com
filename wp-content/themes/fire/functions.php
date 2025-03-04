@@ -388,3 +388,17 @@ add_action('admin_init', function() {
     // Add Gravity Forms capabilities to editor role
     $editor->add_cap('gform_full_access');
 });
+
+
+// Allow editors to have access to the menu items
+add_action('admin_init', function() {
+    $editor = get_role('editor');
+    $editor->add_cap('edit_nav_menus');
+
+    // Remove other appearance menu capabilities
+    $editor->remove_cap('edit_theme_options');
+    $editor->remove_cap('customize');
+    $editor->remove_cap('switch_themes');
+    $editor->remove_cap('edit_theme_options');
+});
+
