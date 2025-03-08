@@ -21,7 +21,7 @@
         <?php new Fire_Heading($tag, $heading, 'heading-3 font-bold text-center mb-5 lg:mb-10');?>
       <?php endif;?>
       <!-- trustindex no-registration=google -->
-      <?php echo do_shortcode( '[trustindex no-registration=google]' ); ?>
+      <?php echo do_shortcode( '[trustindex data-widget-id=ca9f41a4262b66226e368356c8d]' ); ?>
     </div>
   <?php endif; ?>
 <?php $section->end(); ?>

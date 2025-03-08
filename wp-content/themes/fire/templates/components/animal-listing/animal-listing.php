@@ -56,7 +56,7 @@
             id="<?php echo $animal_slug; ?>"
             class="animal-card w-full bg-texture-croc overflow-hidden flex flex-col rounded-xl lg:rounded-[30px] hover:scale-105 transition-all hover:rotate-[<?php echo $rotate_image; ?>deg] duration-300 ease-bounce <?php echo $card_colors[$color_index % count($card_colors)]; ?>">
             <div class="aspect-[3/2] w-full overflow-hidden rounded-b-xl shrink-0 lg:rounded-b-[30px]">
-              <?php echo ResponsivePics::get_picture($image, 'sm:600 600|f', 'lazyload-effect full-image', true, true); ?>
+              <?php echo ResponsivePics::get_picture($image, 'sm:600 600|f', 'lazyload-effect full-image', false, false); ?>
             </div>
             <div class="p-3 md:p-4 grow w-full">
               <h3 class="text-[1.5rem] font-bold"><?php echo $animal_name; ?></h3>

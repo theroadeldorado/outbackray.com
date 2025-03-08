@@ -8,6 +8,12 @@
   @apply !block;
 }
 
+.hide-if-no-customize,
+.menu-icon-tools,
+#menu-comments {
+  @apply !hidden;
+}
+
 body:not(.post-type-post) {
   .mce-edit-area {
     iframe {

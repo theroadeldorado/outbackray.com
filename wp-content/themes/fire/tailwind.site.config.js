@@ -72,7 +72,9 @@ module.exports = {
       },
     },
     fontFamily: {
-      body: ['Quicksand', 'sans-serif'],
+      // body: ['Quicksand', 'sans-serif'],
+      body: ['Hind Madurai', 'sans-serif'],
+      heading: ['Lora', 'serif'],
     },
     fontSize: {
       // removes bases sizes

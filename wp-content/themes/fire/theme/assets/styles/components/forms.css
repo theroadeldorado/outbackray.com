@@ -1,4 +1,23 @@
 .gform_wrapper {
+  .gform_heading {
+    @apply hidden;
+  }
+
+  .gfield {
+    @apply !mb-8;
+  }
+
+  .gfield--type-honeypot {
+    @apply invisible h-0 mb-0 !important;
+  }
+
+  .gform-field-label--type-sub {
+    @apply text-[0.875rem] ml-2 font-bold -translate-y-1 inline-block;
+  }
+
+  .ginput_complex {
+    @apply grid grid-cols-2 gap-2;
+  }
   @apply text-white;
   input:not([type='submit'], [type='checkbox'], [type='radio']),
   [type='text'],
@@ -11,7 +30,7 @@
   [type='date'],
   textarea,
   select {
-    @apply bg-white text-dark-blue py-2 px-4 rounded-3xl w-full mb-3 last:mb-0;
+    @apply bg-white text-dark-blue py-2 px-4 rounded-xl w-full mb-2 last:mb-0;
   }
   select {
     @apply appearance-none bg-no-repeat !important;
@@ -19,9 +38,9 @@
     background-position: right 12px center;
     background-size: 10px;
   }
-  label {
-    @apply text-[0.75rem] uppercase font-bold mb-1.5 ml-2;
-  }
+  /* label {
+    @apply text-[0.75rem] uppercase font-bold mb-1.5;
+  } */
   fieldset {
     @apply mb-3 last:mb-0;
   }
@@ -34,6 +53,14 @@
   }
   .gform-footer {
     @apply mt-4;
+  }
+
+  .gfield_label {
+    @apply text-[1.2rem] font-bold mb-2 block;
+  }
+
+  .gfield--type-section {
+    @apply block border-t border-white/50 my-8;
   }
 }
 

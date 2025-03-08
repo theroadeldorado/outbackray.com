@@ -385,20 +385,66 @@ add_action('admin_init', function() {
     // Get the editor role
     $editor = get_role('editor');
 
-    // Add Gravity Forms capabilities to editor role
-    $editor->add_cap('gform_full_access');
+    // Check if editor role exists before modifying
+    if (!empty($editor)) {
+        // Add Gravity Forms capabilities to editor role
+        $editor->add_cap('gform_full_access');
+    }
 });
 
 
 // Allow editors to have access to the menu items
 add_action('admin_init', function() {
     $editor = get_role('editor');
-    $editor->add_cap('edit_nav_menus');
 
-    // Remove other appearance menu capabilities
-    $editor->remove_cap('edit_theme_options');
-    $editor->remove_cap('customize');
-    $editor->remove_cap('switch_themes');
-    $editor->remove_cap('edit_theme_options');
+    // Check if editor role exists before modifying
+    if (!empty($editor)) {
+        // Add menu editing capability
+        $editor->add_cap('edit_nav_menus');
+        $editor->add_cap('edit_theme_options'); // Need this for menus to work properly
+
+        // Remove other appearance menu capabilities
+        $editor->remove_cap('customize');
+        $editor->remove_cap('switch_themes');
+
+        // Add this to ensure editors can access Menus
+        add_filter('map_meta_cap', function($caps, $cap, $user_id, $args) {
+            if ($cap === 'edit_theme_options' && in_array('editor', get_userdata($user_id)->roles)) {
+                // Only allow for menus
+                if (isset($_GET['menu']) || strpos($_SERVER['REQUEST_URI'], 'nav-menus.php') !== false) {
+                    return ['edit_theme_options'];
+                }
+            }
+            return $caps;
+        }, 10, 4);
+    }
 });
 
+// Hide specific appearance submenu items for editors
+add_action('admin_menu', function() {
+    if (current_user_can('editor')) {
+        // Remove unwanted submenu items from Appearance menu for editors
+        remove_submenu_page('themes.php', 'themes.php'); // Themes
+        remove_submenu_page('themes.php', 'widgets.php'); // Widgets
+        remove_submenu_page('themes.php', 'custom-background'); // Background
+
+        // Don't remove customize.php as it's needed for menu editing
+    }
+}, 999); // High priority to ensure it runs after the menu is built
+
+// Block direct access to customize.php except for menu editing
+add_action('admin_init', function() {
+    if (current_user_can('editor') && !current_user_can('administrator')) {
+        $current_url = $_SERVER['REQUEST_URI'];
+
+        // Check if we're on the customize page
+        if (strpos($current_url, 'customize.php') !== false) {
+            // Only allow if it's for menu editing
+            if (strpos($current_url, 'autofocus%5Bpanel%5D=nav_menus') === false &&
+                strpos($current_url, 'return=%2Fwp-admin%2Fnav-menus.php') === false) {
+                wp_redirect(admin_url());
+                exit;
+            }
+        }
+    }
+});
