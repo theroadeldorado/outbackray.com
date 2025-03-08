@@ -5,6 +5,7 @@
   $show_ray = get_sub_field('show_ray');
   $video = get_sub_field('video');
   $add_black_separation_bar = get_sub_field('add_black_separation_bar');
+  $bar_color = get_sub_field('bar_color');
 
   $crops = $full_screen ? 'sm:600 600|f, md:900 506|f, lg:1200 675|f, xl:1920 1080|f, xxl:2560 1440|f' : 'sm:900 506|f, lg:1200 675|f, xl:1920 1080|f, xxl:2560 1440|f';
 
@@ -54,7 +55,7 @@
   </div>
 
   <?php if($add_black_separation_bar):?>
-    <div class="w-full h-2 lg:h-4 bg-gray-900" aria-hidden></div>
+    <div class="w-full h-2 lg:h-4" <?php echo $bar_color ? 'style="background-color: ' . $bar_color . ';"' : ''; ?> aria-hidden></div>
   <?php endif; ?>
 
 <?php $section->end(); ?>
