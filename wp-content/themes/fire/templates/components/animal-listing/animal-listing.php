@@ -90,7 +90,7 @@
           <?php if($gallery): ?>
             <?php foreach($gallery as $image): ?>
               <div
-                class="flex items-center justify-center w-[90vw] h-[90vh]"
+                class="flex items-center justify-center w-[90vw] h-[calc(90vh-8.125rem)] pb-[8.125rem]"
                 data-animal="<?php echo $animal_id; ?>"
                 data-media-type="image"
                 data-url="<?php echo wp_get_attachment_image_url($image, 'full'); ?>"
@@ -113,12 +113,12 @@
                 $iframe = preg_replace('/width="(\d+)"/', 'width="1280"', $iframe);
                 $iframe = preg_replace('/height="(\d+)"/', 'height="720"', $iframe);
                 ?>
-                <div class="flex items-center justify-center"
+                <div class="flex items-center justify-center w-[90vw] h-[80vh] pb-[8.125rem]"
                      data-animal="<?php echo $animal_id; ?>"
                      data-media-type="video"
                      data-slide="<?php echo $media_index; ?>"
                      x-show="isOpen && activeAnimal === <?php echo $animal_id; ?> && currentSlide === <?php echo $media_index; ?>">
-                  <div class="aspect-video w-full max-w-[90vw]">
+                  <div class="aspect-video w-auto max-w-[90vw] max-h-[80vh]">
                     <?php echo $iframe; ?>
                   </div>
                 </div>
