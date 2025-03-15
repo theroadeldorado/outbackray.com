@@ -113,12 +113,13 @@
                 $iframe = preg_replace('/width="(\d+)"/', 'width="1280"', $iframe);
                 $iframe = preg_replace('/height="(\d+)"/', 'height="720"', $iframe);
                 ?>
-                <div class="flex items-center justify-center w-[90vw] h-[80vh] pb-[8.125rem]"
-                     data-animal="<?php echo $animal_id; ?>"
-                     data-media-type="video"
-                     data-slide="<?php echo $media_index; ?>"
-                     x-show="isOpen && activeAnimal === <?php echo $animal_id; ?> && currentSlide === <?php echo $media_index; ?>">
-                  <div class="aspect-video w-auto max-w-[90vw] max-h-[80vh]">
+                <div
+                  class="flex items-center justify-center w-[90vw] h-[80vh] pb-[8.125rem]"
+                  data-animal="<?php echo $animal_id; ?>"
+                  data-media-type="video"
+                  data-slide="<?php echo $media_index; ?>"
+                  x-show="isOpen && activeAnimal === <?php echo $animal_id; ?> && currentSlide === <?php echo $media_index; ?>">
+                  <div class="aspect-video w-auto object-contain">
                     <?php echo $iframe; ?>
                   </div>
                 </div>
