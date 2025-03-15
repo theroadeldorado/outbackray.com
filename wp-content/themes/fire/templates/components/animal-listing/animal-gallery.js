@@ -7,7 +7,6 @@ export default () => ({
   touchStartX: 0,
   touchEndX: 0,
   minSwipeDistance: 20, // Minimum pixels to trigger swipe
-  activeIframes: {},
 
   init() {
     // Build a map of media (images + videos) for each animal
@@ -38,45 +37,6 @@ export default () => ({
         document.removeEventListener('touchstart', this.handleTouchStart.bind(this));
         document.removeEventListener('touchend', this.handleTouchEnd.bind(this));
       }
-    });
-
-    // Watch for slide changes to handle videos
-    this.$watch('currentSlide', (newSlide, oldSlide) => {
-      if (this.activeAnimal) {
-        this.stopVideos();
-      }
-    });
-  },
-
-  stopVideos() {
-    // Find all video iframes in the gallery
-    const videoIframes = document.querySelectorAll('[data-animal][data-media-type="video"] iframe');
-
-    videoIframes.forEach((iframe) => {
-      // Store the original src
-      const originalSrc = iframe.src;
-
-      // If we haven't stored this iframe yet, store its original source
-      if (!this.activeIframes[originalSrc]) {
-        this.activeIframes[originalSrc] = originalSrc;
-      }
-
-      // Remove src to stop video
-      iframe.src = '';
-
-      // Set timeout to restore the src if this is the active slide
-      setTimeout(() => {
-        const slideContainer = iframe.closest('[data-animal][data-media-type="video"]');
-        if (slideContainer) {
-          const slideIndex = parseInt(slideContainer.dataset.slide);
-          const animalId = parseInt(slideContainer.dataset.animal);
-
-          // Only restore src if this is currently the active slide
-          if (this.isOpen && this.activeAnimal === animalId && this.currentSlide === slideIndex) {
-            iframe.src = this.activeIframes[originalSrc];
-          }
-        }
-      }, 50);
     });
   },
 
@@ -109,11 +69,9 @@ export default () => ({
   },
 
   closeGallery() {
-    this.stopVideos();
     this.isOpen = false;
     this.activeAnimal = null;
     this.currentSlide = 0;
-    this.activeIframes = {};
   },
 
   nextImage(animalIndex) {
