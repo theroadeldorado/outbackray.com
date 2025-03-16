@@ -3,6 +3,12 @@
     @apply scroll-smooth selection:bg-light-orange selection:text-purple;
   }
 
+  * {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    touch-action: manipulation;
+  }
+
   body:not(.wp-admin):not(.mce-content-body) {
     @apply bg-light-tan;
   }
