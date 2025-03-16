@@ -29,15 +29,15 @@ export default () => ({
     });
 
     // Add touch event listeners
-    this.$watch('isOpen', (value) => {
-      if (value) {
-        document.addEventListener('touchstart', this.handleTouchStart.bind(this), { passive: true });
-        document.addEventListener('touchend', this.handleTouchEnd.bind(this), { passive: true });
-      } else {
-        document.removeEventListener('touchstart', this.handleTouchStart.bind(this));
-        document.removeEventListener('touchend', this.handleTouchEnd.bind(this));
-      }
-    });
+    // this.$watch('isOpen', (value) => {
+    //   if (value) {
+    //     document.addEventListener('touchstart', this.handleTouchStart.bind(this), { passive: true });
+    //     document.addEventListener('touchend', this.handleTouchEnd.bind(this), { passive: true });
+    //   } else {
+    //     document.removeEventListener('touchstart', this.handleTouchStart.bind(this));
+    //     document.removeEventListener('touchend', this.handleTouchEnd.bind(this));
+    //   }
+    // });
   },
 
   handleTouchStart(e) {
