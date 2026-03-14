@@ -38,8 +38,8 @@ $thumbnail_id = get_post_thumbnail_id();
   <?php if ($thumbnail_id) : ?>
     <div class="bg-light-tan">
       <div class="fire-container py-10 lg:py-14">
-        <div class="col-[main] md:col-[col-2/col-11] lg:col-[col-2/col-11] overflow-hidden rounded-xl lg:rounded-[30px] aspect-[6/4]">
-          <?php echo ResponsivePics::get_picture($thumbnail_id, 'sm:800 600|f, md:1200 800|f, lg:1600 900|f', 'full-image', false, false); ?>
+        <div class="col-[main] md:col-[col-2/col-11] lg:col-[col-2/col-11] overflow-hidden rounded-xl lg:rounded-[30px]">
+          <?php echo ResponsivePics::get_picture($thumbnail_id, 'sm:800 533|f, md:1200 800|f, lg:1600 1067|f', 'full-image', false, false); ?>
         </div>
       </div>
     </div>
