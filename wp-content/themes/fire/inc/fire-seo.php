@@ -238,3 +238,139 @@ add_filter('document_title_parts', 'fire_seo_filter_document_title_parts');
 add_filter('robots_txt', function ($output) {
   return preg_replace('/^Crawl-delay:.*\n?/mi', '', $output);
 }, 999);
+
+/**
+ * Output LocalBusiness JSON-LD structured data on the front page.
+ *
+ * Tells Google this is a local entertainment business serving Northeast Ohio.
+ */
+function fire_seo_local_business_schema() {
+  if (!is_front_page()) {
+    return;
+  }
+
+  $schema = array(
+    '@context'    => 'https://schema.org',
+    '@type'       => 'EntertainmentBusiness',
+    'name'        => 'Outback Ray\'s Amazing Animal Show',
+    'url'         => home_url('/'),
+    'telephone'   => '(216) 381-1130',
+    'description' => 'Live animal shows for schools, birthday parties, libraries, senior centers, and community events across Northeast Ohio.',
+    'image'       => get_template_directory_uri() . '/dist/assets/media/logo.png',
+    'priceRange'  => '$$',
+    'areaServed'  => array(
+      array(
+        '@type' => 'GeoCircle',
+        'geoMidpoint' => array(
+          '@type'     => 'GeoCoordinates',
+          'latitude'  => 41.1684,
+          'longitude' => -81.6401,
+        ),
+        'geoRadius' => '96560',
+      ),
+      array(
+        '@type' => 'City',
+        'name'  => 'Akron, OH',
+      ),
+      array(
+        '@type' => 'City',
+        'name'  => 'Cleveland, OH',
+      ),
+      array(
+        '@type' => 'City',
+        'name'  => 'Canton, OH',
+      ),
+      array(
+        '@type' => 'City',
+        'name'  => 'Youngstown, OH',
+      ),
+      array(
+        '@type' => 'City',
+        'name'  => 'Medina, OH',
+      ),
+      array(
+        '@type' => 'City',
+        'name'  => 'Wooster, OH',
+      ),
+      array(
+        '@type' => 'City',
+        'name'  => 'Cuyahoga Falls, OH',
+      ),
+      array(
+        '@type' => 'City',
+        'name'  => 'Kent, OH',
+      ),
+      array(
+        '@type' => 'City',
+        'name'  => 'Hudson, OH',
+      ),
+      array(
+        '@type' => 'City',
+        'name'  => 'Stow, OH',
+      ),
+      array(
+        '@type' => 'City',
+        'name'  => 'Mentor, OH',
+      ),
+      array(
+        '@type' => 'City',
+        'name'  => 'Elyria, OH',
+      ),
+      array(
+        '@type' => 'City',
+        'name'  => 'Lorain, OH',
+      ),
+      array(
+        '@type' => 'City',
+        'name'  => 'Mansfield, OH',
+      ),
+      array(
+        '@type' => 'City',
+        'name'  => 'Warren, OH',
+      ),
+      array(
+        '@type' => 'City',
+        'name'  => 'Parma, OH',
+      ),
+      array(
+        '@type' => 'City',
+        'name'  => 'Lakewood, OH',
+      ),
+      array(
+        '@type' => 'City',
+        'name'  => 'Strongsville, OH',
+      ),
+      array(
+        '@type' => 'City',
+        'name'  => 'Brunswick, OH',
+      ),
+      array(
+        '@type' => 'City',
+        'name'  => 'Barberton, OH',
+      ),
+      array(
+        '@type' => 'City',
+        'name'  => 'Wadsworth, OH',
+      ),
+      array(
+        '@type' => 'City',
+        'name'  => 'Massillon, OH',
+      ),
+      array(
+        '@type' => 'City',
+        'name'  => 'Sandusky, OH',
+      ),
+    ),
+    'aggregateRating' => array(
+      '@type'       => 'AggregateRating',
+      'ratingValue' => '5.0',
+      'reviewCount' => '215',
+    ),
+    'sameAs' => array(
+      'https://www.google.com/maps/place/Outback+Ray%27s+Amazing+Animal+Show/',
+    ),
+  );
+
+  echo '<script type="application/ld+json">' . wp_json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . '</script>' . "\n";
+}
+add_action('wp_head', 'fire_seo_local_business_schema');
