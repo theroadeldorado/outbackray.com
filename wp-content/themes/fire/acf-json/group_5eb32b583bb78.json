@@ -183,6 +183,41 @@
             ]
         },
         {
+            "key": "field_blog_settings_tab",
+            "label": "Blog",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_blog_page_link",
+            "label": "Blog Page",
+            "name": "blog_page_link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "Select the blog page. Used for \"Back to Blog\" links on single posts and the latest posts section.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        },
+        {
             "key": "field_5efe2db0341c7",
             "label": "Bugherd",
             "name": "",

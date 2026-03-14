@@ -461,3 +461,56 @@ function fire_seo_faq_schema() {
   echo '<script type="application/ld+json">' . wp_json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . '</script>' . "\n";
 }
 add_action('wp_head', 'fire_seo_faq_schema');
+
+/**
+ * Output BlogPosting JSON-LD structured data on single blog posts.
+ *
+ * Enables rich article snippets in Google search results.
+ */
+function fire_seo_blog_posting_schema() {
+  if (!is_singular('post')) {
+    return;
+  }
+
+  $post = get_queried_object();
+
+  $schema = array(
+    '@context'      => 'https://schema.org',
+    '@type'         => 'BlogPosting',
+    'headline'      => fire_seo_clean_text($post->post_title),
+    'datePublished' => get_the_date('c', $post),
+    'dateModified'  => get_the_modified_date('c', $post),
+    'author'        => array(
+      '@type' => 'Person',
+      'name'  => get_the_author_meta('display_name', $post->post_author),
+    ),
+    'publisher'     => array(
+      '@type' => 'Organization',
+      'name'  => 'Outback Ray\'s Amazing Animal Show',
+      'logo'  => array(
+        '@type' => 'ImageObject',
+        'url'   => get_template_directory_uri() . '/dist/assets/media/logo.png',
+      ),
+    ),
+    'mainEntityOfPage' => array(
+      '@type' => 'WebPage',
+      '@id'   => get_permalink($post),
+    ),
+  );
+
+  $thumbnail_id = get_post_thumbnail_id($post->ID);
+  if ($thumbnail_id) {
+    $image_url = wp_get_attachment_image_url($thumbnail_id, 'full');
+    if ($image_url) {
+      $schema['image'] = $image_url;
+    }
+  }
+
+  $description = fire_seo_generate_description($post->ID);
+  if (!empty($description)) {
+    $schema['description'] = $description;
+  }
+
+  echo '<script type="application/ld+json">' . wp_json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . '</script>' . "\n";
+}
+add_action('wp_head', 'fire_seo_blog_posting_schema');
