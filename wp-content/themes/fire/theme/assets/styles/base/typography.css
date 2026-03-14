@@ -217,13 +217,12 @@
   }
 
   .blog-card__image {
-    @apply aspect-[3/2];
+    @apply aspect-[3/2] relative;
 
-    @screen md {
-      aspect-ratio: auto;
+    picture {
+      @apply absolute inset-0 block w-full h-full;
     }
 
-    picture,
     picture img {
       @apply block w-full h-full object-cover;
     }
