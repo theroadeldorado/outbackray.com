@@ -374,3 +374,90 @@ function fire_seo_local_business_schema() {
   echo '<script type="application/ld+json">' . wp_json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . '</script>' . "\n";
 }
 add_action('wp_head', 'fire_seo_local_business_schema');
+
+/**
+ * Output FAQPage JSON-LD structured data on the FAQs page.
+ *
+ * Enables rich FAQ snippets in Google search results.
+ */
+function fire_seo_faq_schema() {
+  if (!is_page('faqs')) {
+    return;
+  }
+
+  $faqs = array(
+    array(
+      'q' => 'Can the show be done inside my home?',
+      'a' => 'Yes! Outback Ray has been doing shows in people\'s homes for decades! The first floor is preferred as there are multiple trips to load &amp; unload with the animal carriers &amp; stairs can be difficult.',
+    ),
+    array(
+      'q' => 'How much space is needed?',
+      'a' => 'Outback Ray needs approximately a 5X8 area for him and the animals. The carriers are stackable making it easy to fit into most rooms.',
+    ),
+    array(
+      'q' => 'When does the show have to be indoors?',
+      'a' => 'Shows must be indoors when temperatures fall below 60 degrees, above 85 degrees (air-conditioned space preferred), or during inclement weather like rain or high winds.',
+    ),
+    array(
+      'q' => 'When can shows be outdoors?',
+      'a' => 'When temperatures are above a nice 60 degrees or better, outdoor shows are great! Shade needs to be provided for the animals.',
+    ),
+    array(
+      'q' => 'What age group is best?',
+      'a' => 'Outback Ray\'s Amazing Animal Show is perfect for any age group, from toddlers to seniors.',
+    ),
+    array(
+      'q' => 'How much does the show cost?',
+      'a' => 'Cost varies based on location, time of year, and event type. Contact Outback Ray for a personalized quote.',
+    ),
+    array(
+      'q' => 'Is Outback Ray Licensed and Insured?',
+      'a' => 'Yes! Outback Ray is fully licensed and insured, including USDA &amp; Board of Health.',
+    ),
+    array(
+      'q' => 'Can people touch the animals?',
+      'a' => 'Yes! Outback Ray\'s Amazing Animal Show is very hands-on. All of Ray\'s animals are captive born and raised by him.',
+    ),
+    array(
+      'q' => 'Is there a limit to the amount of people who can attend?',
+      'a' => 'No, there is not a limit to the amount of attendees. Outback Ray has performed for audiences of one as well as groups of a thousand+.',
+    ),
+    array(
+      'q' => 'How far in advance do I need to schedule?',
+      'a' => 'Summer months book faster so it\'s best to plan ahead. Contact Outback Ray to check availability for your date.',
+    ),
+    array(
+      'q' => 'What areas do you serve?',
+      'a' => 'Outback Ray serves Northeast Ohio &amp; surrounding areas including Akron, Cleveland, Canton, Youngstown, Medina, and more. Contact Ray to see if he travels to your area.',
+    ),
+    array(
+      'q' => 'Can I request certain animals?',
+      'a' => 'Requests are possible, but factors like feeding and shedding schedules apply. With live animals there are no guarantees, but Ray does his best to accommodate requests.',
+    ),
+    array(
+      'q' => 'How long is the show?',
+      'a' => 'Outback Ray\'s Amazing Animal Show averages 45 minutes to an hour, but can easily be extended.',
+    ),
+  );
+
+  $main_entity = array();
+  foreach ($faqs as $faq) {
+    $main_entity[] = array(
+      '@type' => 'Question',
+      'name'  => $faq['q'],
+      'acceptedAnswer' => array(
+        '@type' => 'Answer',
+        'text'  => $faq['a'],
+      ),
+    );
+  }
+
+  $schema = array(
+    '@context'   => 'https://schema.org',
+    '@type'      => 'FAQPage',
+    'mainEntity' => $main_entity,
+  );
+
+  echo '<script type="application/ld+json">' . wp_json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . '</script>' . "\n";
+}
+add_action('wp_head', 'fire_seo_faq_schema');
