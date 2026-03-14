@@ -30,9 +30,6 @@ $thumbnail_id = get_post_thumbnail_id();
 
         <p class="base-sm opacity-80">
           <?php echo get_the_date('F j, Y'); ?>
-          <?php if (get_the_author()) : ?>
-            &middot; <?php echo get_the_author(); ?>
-          <?php endif; ?>
         </p>
       </div>
     </div>
