@@ -19,6 +19,7 @@ if (!function_exists('get_field')) {
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="profile" href="https://gmpg.org/xfn/11">
+  <script defer src='https://cdn.trustindex.io/loader.js?ca9f41a4262b66226e368356c8d'></script>
   <?php
     $bugherd_api_key = get_field('bugherd_api_key', 'site_settings');
     $bugherd_enabled = get_field('bugherd_enabled', 'site_settings');
