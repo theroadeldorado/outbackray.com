@@ -368,18 +368,19 @@ function get_youtube_id($url) {
     return ($result) ? $matches[1] : false;
 }
 
-add_action('init', function() {
-    // Unregister the post type before admin menu loads
-    unregister_post_type('post');
-}, 0); // Priority 0 to run early
 
-add_action('admin_menu', function() {
-    // Only try to remove menu if post type still exists
-    if (post_type_exists('post')) {
-        remove_menu_page('edit.php');
-    }
-});
 
+add_action('wp_insert_post', function($post_id, $post, $update) {
+  if ($update || $post->post_type !== 'post') {
+    return;
+  }
+
+  $colors = array('bg-green', 'bg-orange', 'bg-navy', 'bg-purple', 'bg-tan');
+  $textures = array('bg-texture-waves', 'bg-texture-croc', 'bg-texture-snake', 'bg-texture-leaves', 'bg-texture-leaves-2');
+
+  update_field('background_colors', $colors[array_rand($colors)], $post_id);
+  update_field('background_texture', $textures[array_rand($textures)], $post_id);
+}, 10, 3);
 
 add_action('admin_init', function() {
     // Get the editor role

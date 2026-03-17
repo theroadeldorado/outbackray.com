@@ -10,20 +10,17 @@
 get_header();
 ?>
 
-	<main id="primary" class="container py-10 site-main">
+	<main id="primary" class="site-main">
 
 		<?php
 		while ( have_posts() ) :
 			the_post();
 
-			get_template_part( 'templates/content', get_post_type() );
-
-			the_post_navigation(
-				array(
-					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'fire' ) . '</span> <span class="nav-title">%title</span>',
-					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'fire' ) . '</span> <span class="nav-title">%title</span>',
-				)
-			);
+			if ( get_post_type() === 'post' ) {
+				get_template_part( 'templates/content', 'post' );
+			} else {
+				get_template_part( 'templates/content', get_post_type() );
+			}
 
 		endwhile; // End of the loop.
 		?>
@@ -31,5 +28,4 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();

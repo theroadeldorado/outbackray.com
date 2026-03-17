@@ -336,6 +336,70 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_blog_latest_posts": {
+                    "key": "layout_blog_latest_posts",
+                    "name": "latest_posts",
+                    "label": "Latest Posts",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_blog_latest_posts_clone",
+                            "label": "Latest Posts",
+                            "name": "latest_posts",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_blog_latest_posts"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_blog_feed": {
+                    "key": "layout_blog_feed",
+                    "name": "blog_feed",
+                    "label": "Blog Feed",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_blog_feed_clone",
+                            "label": "Blog Feed",
+                            "name": "blog_feed",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_blog_feed"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
